@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhookPullRequestReviewRequestRemovedVariant2RequestedTeamParentPrivacy
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Closed,
+        /// <summary>
+        ///
+        /// </summary>
+        Open,
+        /// <summary>
+        ///
+        /// </summary>
+        Secret,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestReviewRequestRemovedVariant2RequestedTeamParentPrivacyExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestReviewRequestRemovedVariant2RequestedTeamParentPrivacy value)
+        {
+            return value switch
+            {
+                WebhookPullRequestReviewRequestRemovedVariant2RequestedTeamParentPrivacy.Closed => "closed",
+                WebhookPullRequestReviewRequestRemovedVariant2RequestedTeamParentPrivacy.Open => "open",
+                WebhookPullRequestReviewRequestRemovedVariant2RequestedTeamParentPrivacy.Secret => "secret",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestReviewRequestRemovedVariant2RequestedTeamParentPrivacy? ToEnum(string value)
+        {
+            return value switch
+            {
+                "closed" => WebhookPullRequestReviewRequestRemovedVariant2RequestedTeamParentPrivacy.Closed,
+                "open" => WebhookPullRequestReviewRequestRemovedVariant2RequestedTeamParentPrivacy.Open,
+                "secret" => WebhookPullRequestReviewRequestRemovedVariant2RequestedTeamParentPrivacy.Secret,
+                _ => null,
+            };
+        }
+    }
+}

@@ -1,0 +1,45 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public sealed partial class WebhookRepositoryTransferredChanges
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.GitHub.WebhookRepositoryTransferredChangesOwner Owner { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRepositoryTransferredChanges" /> class.
+        /// </summary>
+        /// <param name="owner"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public WebhookRepositoryTransferredChanges(
+            global::tryAGI.GitHub.WebhookRepositoryTransferredChangesOwner owner)
+        {
+            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRepositoryTransferredChanges" /> class.
+        /// </summary>
+        public WebhookRepositoryTransferredChanges()
+        {
+        }
+
+    }
+}

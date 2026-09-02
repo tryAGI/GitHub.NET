@@ -1,0 +1,44 @@
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    public partial interface IOrgsClient
+    {
+        /// <summary>
+        /// Ping an organization webhook<br/>
+        /// This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event)<br/>
+        /// to be sent to the hook.<br/>
+        /// You must be an organization owner to use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit<br/>
+        /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="hookId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task OrgsPingWebhookAsync(
+            string org,
+            int hookId,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Ping an organization webhook<br/>
+        /// This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event)<br/>
+        /// to be sent to the hook.<br/>
+        /// You must be an organization owner to use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit<br/>
+        /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="hookId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.AutoSDKHttpResponse> OrgsPingWebhookAsResponseAsync(
+            string org,
+            int hookId,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

@@ -1,0 +1,40 @@
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    public partial interface IPullsClient
+    {
+        /// <summary>
+        /// Get all requested reviewers for a pull request<br/>
+        /// Gets the users or teams whose review is requested for a pull request. Once a requested reviewer submits a review, they are no longer considered a requested reviewer. Their review will instead be returned by the [List reviews for a pull request](https://docs.github.com/rest/pulls/reviews#list-reviews-for-a-pull-request) operation.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="pullNumber"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.PullRequestReviewRequest> PullsListRequestedReviewersAsync(
+            string owner,
+            string repo,
+            int pullNumber,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get all requested reviewers for a pull request<br/>
+        /// Gets the users or teams whose review is requested for a pull request. Once a requested reviewer submits a review, they are no longer considered a requested reviewer. Their review will instead be returned by the [List reviews for a pull request](https://docs.github.com/rest/pulls/reviews#list-reviews-for-a-pull-request) operation.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="pullNumber"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.AutoSDKHttpResponse<global::tryAGI.GitHub.PullRequestReviewRequest>> PullsListRequestedReviewersAsResponseAsync(
+            string owner,
+            string repo,
+            int pullNumber,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

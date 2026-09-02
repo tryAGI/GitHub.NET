@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhookIssuesLockedIssueMilestoneCreatorType
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Bot,
+        /// <summary>
+        ///
+        /// </summary>
+        Organization,
+        /// <summary>
+        ///
+        /// </summary>
+        User,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssuesLockedIssueMilestoneCreatorTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssuesLockedIssueMilestoneCreatorType value)
+        {
+            return value switch
+            {
+                WebhookIssuesLockedIssueMilestoneCreatorType.Bot => "Bot",
+                WebhookIssuesLockedIssueMilestoneCreatorType.Organization => "Organization",
+                WebhookIssuesLockedIssueMilestoneCreatorType.User => "User",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssuesLockedIssueMilestoneCreatorType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookIssuesLockedIssueMilestoneCreatorType.Bot,
+                "Organization" => WebhookIssuesLockedIssueMilestoneCreatorType.Organization,
+                "User" => WebhookIssuesLockedIssueMilestoneCreatorType.User,
+                _ => null,
+            };
+        }
+    }
+}

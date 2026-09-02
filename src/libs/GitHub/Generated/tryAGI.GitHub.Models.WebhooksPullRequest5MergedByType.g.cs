@@ -1,0 +1,63 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhooksPullRequest5MergedByType
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Bot,
+        /// <summary>
+        ///
+        /// </summary>
+        Mannequin,
+        /// <summary>
+        ///
+        /// </summary>
+        Organization,
+        /// <summary>
+        ///
+        /// </summary>
+        User,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhooksPullRequest5MergedByTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhooksPullRequest5MergedByType value)
+        {
+            return value switch
+            {
+                WebhooksPullRequest5MergedByType.Bot => "Bot",
+                WebhooksPullRequest5MergedByType.Mannequin => "Mannequin",
+                WebhooksPullRequest5MergedByType.Organization => "Organization",
+                WebhooksPullRequest5MergedByType.User => "User",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhooksPullRequest5MergedByType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhooksPullRequest5MergedByType.Bot,
+                "Mannequin" => WebhooksPullRequest5MergedByType.Mannequin,
+                "Organization" => WebhooksPullRequest5MergedByType.Organization,
+                "User" => WebhooksPullRequest5MergedByType.User,
+                _ => null,
+            };
+        }
+    }
+}

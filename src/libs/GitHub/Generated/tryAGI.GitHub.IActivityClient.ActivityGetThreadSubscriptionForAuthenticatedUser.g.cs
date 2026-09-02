@@ -1,0 +1,34 @@
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    public partial interface IActivityClient
+    {
+        /// <summary>
+        /// Get a thread subscription for the authenticated user<br/>
+        /// This checks to see if the current user is subscribed to a thread. You can also [get a repository subscription](https://docs.github.com/rest/activity/watching#get-a-repository-subscription).<br/>
+        /// Note that subscriptions are only generated if a user is participating in a conversation--for example, they've replied to the thread, were **@mentioned**, or manually subscribe to a thread.
+        /// </summary>
+        /// <param name="threadId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.ThreadSubscription> ActivityGetThreadSubscriptionForAuthenticatedUserAsync(
+            int threadId,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get a thread subscription for the authenticated user<br/>
+        /// This checks to see if the current user is subscribed to a thread. You can also [get a repository subscription](https://docs.github.com/rest/activity/watching#get-a-repository-subscription).<br/>
+        /// Note that subscriptions are only generated if a user is participating in a conversation--for example, they've replied to the thread, were **@mentioned**, or manually subscribe to a thread.
+        /// </summary>
+        /// <param name="threadId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.AutoSDKHttpResponse<global::tryAGI.GitHub.ThreadSubscription>> ActivityGetThreadSubscriptionForAuthenticatedUserAsResponseAsync(
+            int threadId,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

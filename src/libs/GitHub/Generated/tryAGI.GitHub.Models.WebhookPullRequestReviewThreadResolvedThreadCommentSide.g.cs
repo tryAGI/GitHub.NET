@@ -1,0 +1,51 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// The side of the first line of the range for a multi-line comment.
+    /// </summary>
+    public enum WebhookPullRequestReviewThreadResolvedThreadCommentSide
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Left,
+        /// <summary>
+        ///
+        /// </summary>
+        Right,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestReviewThreadResolvedThreadCommentSideExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestReviewThreadResolvedThreadCommentSide value)
+        {
+            return value switch
+            {
+                WebhookPullRequestReviewThreadResolvedThreadCommentSide.Left => "LEFT",
+                WebhookPullRequestReviewThreadResolvedThreadCommentSide.Right => "RIGHT",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestReviewThreadResolvedThreadCommentSide? ToEnum(string value)
+        {
+            return value switch
+            {
+                "LEFT" => WebhookPullRequestReviewThreadResolvedThreadCommentSide.Left,
+                "RIGHT" => WebhookPullRequestReviewThreadResolvedThreadCommentSide.Right,
+                _ => null,
+            };
+        }
+    }
+}

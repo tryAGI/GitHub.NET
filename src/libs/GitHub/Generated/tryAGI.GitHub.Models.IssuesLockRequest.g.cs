@@ -1,0 +1,55 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public sealed partial class IssuesLockRequest
+    {
+        /// <summary>
+        /// The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:  <br/>
+        ///  * `off-topic`  <br/>
+        ///  * `too heated`  <br/>
+        ///  * `resolved`  <br/>
+        ///  * `spam`
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("lock_reason")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.GitHub.JsonConverters.IssuesLockRequestLockReasonJsonConverter))]
+        public global::tryAGI.GitHub.IssuesLockRequestLockReason? LockReason { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssuesLockRequest" /> class.
+        /// </summary>
+        /// <param name="lockReason">
+        /// The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:  <br/>
+        ///  * `off-topic`  <br/>
+        ///  * `too heated`  <br/>
+        ///  * `resolved`  <br/>
+        ///  * `spam`
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public IssuesLockRequest(
+            global::tryAGI.GitHub.IssuesLockRequestLockReason? lockReason)
+        {
+            this.LockReason = lockReason;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssuesLockRequest" /> class.
+        /// </summary>
+        public IssuesLockRequest()
+        {
+        }
+
+    }
+}

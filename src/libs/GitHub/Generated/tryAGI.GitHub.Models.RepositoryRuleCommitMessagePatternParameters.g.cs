@@ -1,0 +1,82 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public sealed partial class RepositoryRuleCommitMessagePatternParameters
+    {
+        /// <summary>
+        /// How this rule appears when configuring it.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// If true, the rule will fail if the pattern matches.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("negate")]
+        public bool? Negate { get; set; }
+
+        /// <summary>
+        /// The operator to use for matching.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("operator")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.GitHub.JsonConverters.RepositoryRuleCommitMessagePatternParametersOperatorJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.GitHub.RepositoryRuleCommitMessagePatternParametersOperator Operator { get; set; }
+
+        /// <summary>
+        /// The pattern to match with.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pattern")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Pattern { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleCommitMessagePatternParameters" /> class.
+        /// </summary>
+        /// <param name="operator">
+        /// The operator to use for matching.
+        /// </param>
+        /// <param name="pattern">
+        /// The pattern to match with.
+        /// </param>
+        /// <param name="name">
+        /// How this rule appears when configuring it.
+        /// </param>
+        /// <param name="negate">
+        /// If true, the rule will fail if the pattern matches.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public RepositoryRuleCommitMessagePatternParameters(
+            global::tryAGI.GitHub.RepositoryRuleCommitMessagePatternParametersOperator @operator,
+            string pattern,
+            string? name,
+            bool? negate)
+        {
+            this.Name = name;
+            this.Negate = negate;
+            this.Operator = @operator;
+            this.Pattern = pattern ?? throw new global::System.ArgumentNullException(nameof(pattern));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleCommitMessagePatternParameters" /> class.
+        /// </summary>
+        public RepositoryRuleCommitMessagePatternParameters()
+        {
+        }
+
+    }
+}

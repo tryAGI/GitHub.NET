@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
+    /// </summary>
+    public enum RepositoryRuleEnforcement
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Active,
+        /// <summary>
+        ///
+        /// </summary>
+        Disabled,
+        /// <summary>
+        ///
+        /// </summary>
+        Evaluate,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class RepositoryRuleEnforcementExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this RepositoryRuleEnforcement value)
+        {
+            return value switch
+            {
+                RepositoryRuleEnforcement.Active => "active",
+                RepositoryRuleEnforcement.Disabled => "disabled",
+                RepositoryRuleEnforcement.Evaluate => "evaluate",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static RepositoryRuleEnforcement? ToEnum(string value)
+        {
+            return value switch
+            {
+                "active" => RepositoryRuleEnforcement.Active,
+                "disabled" => RepositoryRuleEnforcement.Disabled,
+                "evaluate" => RepositoryRuleEnforcement.Evaluate,
+                _ => null,
+            };
+        }
+    }
+}

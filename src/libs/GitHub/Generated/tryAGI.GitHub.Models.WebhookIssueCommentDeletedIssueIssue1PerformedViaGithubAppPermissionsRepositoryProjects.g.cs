@@ -1,0 +1,51 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsRepositoryProjects
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Read,
+        /// <summary>
+        ///
+        /// </summary>
+        Write,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsRepositoryProjectsExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsRepositoryProjects value)
+        {
+            return value switch
+            {
+                WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsRepositoryProjects.Read => "read",
+                WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsRepositoryProjects.Write => "write",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsRepositoryProjects? ToEnum(string value)
+        {
+            return value switch
+            {
+                "read" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsRepositoryProjects.Read,
+                "write" => WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissionsRepositoryProjects.Write,
+                _ => null,
+            };
+        }
+    }
+}

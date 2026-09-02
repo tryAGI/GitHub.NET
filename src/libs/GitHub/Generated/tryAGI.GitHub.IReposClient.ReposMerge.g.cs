@@ -1,0 +1,65 @@
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    public partial interface IReposClient
+    {
+        /// <summary>
+        /// Merge a branch
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.Commit> ReposMergeAsync(
+            string owner,
+            string repo,
+
+            global::tryAGI.GitHub.ReposMergeRequest request,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Merge a branch
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.AutoSDKHttpResponse<global::tryAGI.GitHub.Commit>> ReposMergeAsResponseAsync(
+            string owner,
+            string repo,
+
+            global::tryAGI.GitHub.ReposMergeRequest request,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Merge a branch
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="base">
+        /// The name of the base branch that the head will be merged into.
+        /// </param>
+        /// <param name="head">
+        /// The head to merge. This can be a branch name or a commit SHA1.
+        /// </param>
+        /// <param name="commitMessage">
+        /// Commit message to use for the merge commit. If omitted, a default message will be used.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.Commit> ReposMergeAsync(
+            string owner,
+            string repo,
+            string @base,
+            string head,
+            string? commitMessage = default,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

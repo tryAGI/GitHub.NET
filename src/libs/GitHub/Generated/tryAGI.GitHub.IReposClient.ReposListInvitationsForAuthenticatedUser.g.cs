@@ -1,0 +1,44 @@
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    public partial interface IReposClient
+    {
+        /// <summary>
+        /// List repository invitations for the authenticated user<br/>
+        /// When authenticating as a user, this endpoint will list all currently open repository invitations for that user.
+        /// </summary>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::tryAGI.GitHub.RepositoryInvitation>> ReposListInvitationsForAuthenticatedUserAsync(
+            int? perPage = default,
+            int? page = default,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List repository invitations for the authenticated user<br/>
+        /// When authenticating as a user, this endpoint will list all currently open repository invitations for that user.
+        /// </summary>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::tryAGI.GitHub.RepositoryInvitation>>> ReposListInvitationsForAuthenticatedUserAsResponseAsync(
+            int? perPage = default,
+            int? page = default,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

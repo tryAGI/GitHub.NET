@@ -1,0 +1,58 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.<br/>
+    /// Default Value: pull
+    /// </summary>
+    public enum TeamsUpdateLegacyRequestPermission
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Admin,
+        /// <summary>
+        ///
+        /// </summary>
+        Pull,
+        /// <summary>
+        ///
+        /// </summary>
+        Push,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class TeamsUpdateLegacyRequestPermissionExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this TeamsUpdateLegacyRequestPermission value)
+        {
+            return value switch
+            {
+                TeamsUpdateLegacyRequestPermission.Admin => "admin",
+                TeamsUpdateLegacyRequestPermission.Pull => "pull",
+                TeamsUpdateLegacyRequestPermission.Push => "push",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static TeamsUpdateLegacyRequestPermission? ToEnum(string value)
+        {
+            return value switch
+            {
+                "admin" => TeamsUpdateLegacyRequestPermission.Admin,
+                "pull" => TeamsUpdateLegacyRequestPermission.Pull,
+                "push" => TeamsUpdateLegacyRequestPermission.Push,
+                _ => null,
+            };
+        }
+    }
+}

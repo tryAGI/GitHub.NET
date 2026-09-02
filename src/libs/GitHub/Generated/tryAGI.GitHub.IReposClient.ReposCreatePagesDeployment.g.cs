@@ -1,0 +1,81 @@
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    public partial interface IReposClient
+    {
+        /// <summary>
+        /// Create a GitHub Pages deployment<br/>
+        /// Create a GitHub Pages deployment for a repository.<br/>
+        /// The authenticated user must have write permission to the repository.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.PageDeployment> ReposCreatePagesDeploymentAsync(
+            string owner,
+            string repo,
+
+            global::tryAGI.GitHub.ReposCreatePagesDeploymentRequest request,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a GitHub Pages deployment<br/>
+        /// Create a GitHub Pages deployment for a repository.<br/>
+        /// The authenticated user must have write permission to the repository.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.AutoSDKHttpResponse<global::tryAGI.GitHub.PageDeployment>> ReposCreatePagesDeploymentAsResponseAsync(
+            string owner,
+            string repo,
+
+            global::tryAGI.GitHub.ReposCreatePagesDeploymentRequest request,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a GitHub Pages deployment<br/>
+        /// Create a GitHub Pages deployment for a repository.<br/>
+        /// The authenticated user must have write permission to the repository.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="artifactId">
+        /// The ID of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository. Either `artifact_id` or `artifact_url` are required.
+        /// </param>
+        /// <param name="artifactUrl">
+        /// The URL of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository. Either `artifact_id` or `artifact_url` are required.
+        /// </param>
+        /// <param name="environment">
+        /// The target environment for this GitHub Pages deployment.<br/>
+        /// Default Value: github-pages
+        /// </param>
+        /// <param name="pagesBuildVersion">
+        /// A unique string that represents the version of the build for this deployment.<br/>
+        /// Default Value: GITHUB_SHA
+        /// </param>
+        /// <param name="oidcToken">
+        /// The OIDC token issued by GitHub Actions certifying the origin of the deployment.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.PageDeployment> ReposCreatePagesDeploymentAsync(
+            string owner,
+            string repo,
+            string oidcToken,
+            double? artifactId = default,
+            string? artifactUrl = default,
+            string? environment = default,
+            string pagesBuildVersion = "GITHUB_SHA",
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

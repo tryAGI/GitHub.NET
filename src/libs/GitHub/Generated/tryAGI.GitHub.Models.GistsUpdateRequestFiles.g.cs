@@ -1,0 +1,23 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// The gist files to be updated, renamed, or deleted. Each `key` must match the current filename<br/>
+    /// (including extension) of the targeted gist file. For example: `hello.py`.<br/>
+    /// To delete a file, set the whole file to null. For example: `hello.py : null`. The file will also be<br/>
+    /// deleted if the specified object does not contain at least one of `content` or `filename`.<br/>
+    /// Example: {"hello.rb":{"content":"blah","filename":"goodbye.rb"}}
+    /// </summary>
+    public sealed partial class GistsUpdateRequestFiles
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+    }
+}

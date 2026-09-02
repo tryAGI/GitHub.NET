@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhookDeploymentReviewRequestedWorkflowRunActorType
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Bot,
+        /// <summary>
+        ///
+        /// </summary>
+        Organization,
+        /// <summary>
+        ///
+        /// </summary>
+        User,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookDeploymentReviewRequestedWorkflowRunActorTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookDeploymentReviewRequestedWorkflowRunActorType value)
+        {
+            return value switch
+            {
+                WebhookDeploymentReviewRequestedWorkflowRunActorType.Bot => "Bot",
+                WebhookDeploymentReviewRequestedWorkflowRunActorType.Organization => "Organization",
+                WebhookDeploymentReviewRequestedWorkflowRunActorType.User => "User",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookDeploymentReviewRequestedWorkflowRunActorType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookDeploymentReviewRequestedWorkflowRunActorType.Bot,
+                "Organization" => WebhookDeploymentReviewRequestedWorkflowRunActorType.Organization,
+                "User" => WebhookDeploymentReviewRequestedWorkflowRunActorType.User,
+                _ => null,
+            };
+        }
+    }
+}

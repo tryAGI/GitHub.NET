@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhookPullRequestSynchronizePullRequestHeadRepoOwnerType
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Bot,
+        /// <summary>
+        ///
+        /// </summary>
+        Organization,
+        /// <summary>
+        ///
+        /// </summary>
+        User,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestSynchronizePullRequestHeadRepoOwnerTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestSynchronizePullRequestHeadRepoOwnerType value)
+        {
+            return value switch
+            {
+                WebhookPullRequestSynchronizePullRequestHeadRepoOwnerType.Bot => "Bot",
+                WebhookPullRequestSynchronizePullRequestHeadRepoOwnerType.Organization => "Organization",
+                WebhookPullRequestSynchronizePullRequestHeadRepoOwnerType.User => "User",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestSynchronizePullRequestHeadRepoOwnerType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookPullRequestSynchronizePullRequestHeadRepoOwnerType.Bot,
+                "Organization" => WebhookPullRequestSynchronizePullRequestHeadRepoOwnerType.Organization,
+                "User" => WebhookPullRequestSynchronizePullRequestHeadRepoOwnerType.User,
+                _ => null,
+            };
+        }
+    }
+}

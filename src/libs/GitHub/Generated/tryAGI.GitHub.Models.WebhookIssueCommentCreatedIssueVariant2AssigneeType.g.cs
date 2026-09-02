@@ -1,0 +1,63 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhookIssueCommentCreatedIssueVariant2AssigneeType
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Bot,
+        /// <summary>
+        ///
+        /// </summary>
+        Mannequin,
+        /// <summary>
+        ///
+        /// </summary>
+        Organization,
+        /// <summary>
+        ///
+        /// </summary>
+        User,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssueCommentCreatedIssueVariant2AssigneeTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssueCommentCreatedIssueVariant2AssigneeType value)
+        {
+            return value switch
+            {
+                WebhookIssueCommentCreatedIssueVariant2AssigneeType.Bot => "Bot",
+                WebhookIssueCommentCreatedIssueVariant2AssigneeType.Mannequin => "Mannequin",
+                WebhookIssueCommentCreatedIssueVariant2AssigneeType.Organization => "Organization",
+                WebhookIssueCommentCreatedIssueVariant2AssigneeType.User => "User",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssueCommentCreatedIssueVariant2AssigneeType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookIssueCommentCreatedIssueVariant2AssigneeType.Bot,
+                "Mannequin" => WebhookIssueCommentCreatedIssueVariant2AssigneeType.Mannequin,
+                "Organization" => WebhookIssueCommentCreatedIssueVariant2AssigneeType.Organization,
+                "User" => WebhookIssueCommentCreatedIssueVariant2AssigneeType.User,
+                _ => null,
+            };
+        }
+    }
+}

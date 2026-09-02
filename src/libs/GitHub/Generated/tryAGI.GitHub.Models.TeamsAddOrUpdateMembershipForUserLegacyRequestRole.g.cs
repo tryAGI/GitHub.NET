@@ -1,0 +1,52 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// The role that this user should have in the team.<br/>
+    /// Default Value: member
+    /// </summary>
+    public enum TeamsAddOrUpdateMembershipForUserLegacyRequestRole
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Maintainer,
+        /// <summary>
+        ///
+        /// </summary>
+        Member,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class TeamsAddOrUpdateMembershipForUserLegacyRequestRoleExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this TeamsAddOrUpdateMembershipForUserLegacyRequestRole value)
+        {
+            return value switch
+            {
+                TeamsAddOrUpdateMembershipForUserLegacyRequestRole.Maintainer => "maintainer",
+                TeamsAddOrUpdateMembershipForUserLegacyRequestRole.Member => "member",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static TeamsAddOrUpdateMembershipForUserLegacyRequestRole? ToEnum(string value)
+        {
+            return value switch
+            {
+                "maintainer" => TeamsAddOrUpdateMembershipForUserLegacyRequestRole.Maintainer,
+                "member" => TeamsAddOrUpdateMembershipForUserLegacyRequestRole.Member,
+                _ => null,
+            };
+        }
+    }
+}

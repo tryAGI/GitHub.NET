@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// The level of the annotation.
+    /// </summary>
+    public enum ChecksCreateRequestOutputAnnotationAnnotationLevel
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Failure,
+        /// <summary>
+        ///
+        /// </summary>
+        Notice,
+        /// <summary>
+        ///
+        /// </summary>
+        Warning,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ChecksCreateRequestOutputAnnotationAnnotationLevelExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ChecksCreateRequestOutputAnnotationAnnotationLevel value)
+        {
+            return value switch
+            {
+                ChecksCreateRequestOutputAnnotationAnnotationLevel.Failure => "failure",
+                ChecksCreateRequestOutputAnnotationAnnotationLevel.Notice => "notice",
+                ChecksCreateRequestOutputAnnotationAnnotationLevel.Warning => "warning",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ChecksCreateRequestOutputAnnotationAnnotationLevel? ToEnum(string value)
+        {
+            return value switch
+            {
+                "failure" => ChecksCreateRequestOutputAnnotationAnnotationLevel.Failure,
+                "notice" => ChecksCreateRequestOutputAnnotationAnnotationLevel.Notice,
+                "warning" => ChecksCreateRequestOutputAnnotationAnnotationLevel.Warning,
+                _ => null,
+            };
+        }
+    }
+}

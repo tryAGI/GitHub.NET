@@ -1,0 +1,63 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhookIssueCommentPinnedIssueIssue1AssigneeType2
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Bot,
+        /// <summary>
+        ///
+        /// </summary>
+        Mannequin,
+        /// <summary>
+        ///
+        /// </summary>
+        Organization,
+        /// <summary>
+        ///
+        /// </summary>
+        User,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssueCommentPinnedIssueIssue1AssigneeType2Extensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssueCommentPinnedIssueIssue1AssigneeType2 value)
+        {
+            return value switch
+            {
+                WebhookIssueCommentPinnedIssueIssue1AssigneeType2.Bot => "Bot",
+                WebhookIssueCommentPinnedIssueIssue1AssigneeType2.Mannequin => "Mannequin",
+                WebhookIssueCommentPinnedIssueIssue1AssigneeType2.Organization => "Organization",
+                WebhookIssueCommentPinnedIssueIssue1AssigneeType2.User => "User",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssueCommentPinnedIssueIssue1AssigneeType2? ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookIssueCommentPinnedIssueIssue1AssigneeType2.Bot,
+                "Mannequin" => WebhookIssueCommentPinnedIssueIssue1AssigneeType2.Mannequin,
+                "Organization" => WebhookIssueCommentPinnedIssueIssue1AssigneeType2.Organization,
+                "User" => WebhookIssueCommentPinnedIssueIssue1AssigneeType2.User,
+                _ => null,
+            };
+        }
+    }
+}

@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhookPullRequestReviewDismissedPullRequestMilestoneCreatorType
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Bot,
+        /// <summary>
+        ///
+        /// </summary>
+        Organization,
+        /// <summary>
+        ///
+        /// </summary>
+        User,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestReviewDismissedPullRequestMilestoneCreatorTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestReviewDismissedPullRequestMilestoneCreatorType value)
+        {
+            return value switch
+            {
+                WebhookPullRequestReviewDismissedPullRequestMilestoneCreatorType.Bot => "Bot",
+                WebhookPullRequestReviewDismissedPullRequestMilestoneCreatorType.Organization => "Organization",
+                WebhookPullRequestReviewDismissedPullRequestMilestoneCreatorType.User => "User",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestReviewDismissedPullRequestMilestoneCreatorType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookPullRequestReviewDismissedPullRequestMilestoneCreatorType.Bot,
+                "Organization" => WebhookPullRequestReviewDismissedPullRequestMilestoneCreatorType.Organization,
+                "User" => WebhookPullRequestReviewDismissedPullRequestMilestoneCreatorType.User,
+                _ => null,
+            };
+        }
+    }
+}

@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// The level of permission to grant the access token for repository custom properties management at the organization level.
+    /// </summary>
+    public enum AppPermissionsOrganizationCustomProperties
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Admin,
+        /// <summary>
+        ///
+        /// </summary>
+        Read,
+        /// <summary>
+        ///
+        /// </summary>
+        Write,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class AppPermissionsOrganizationCustomPropertiesExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this AppPermissionsOrganizationCustomProperties value)
+        {
+            return value switch
+            {
+                AppPermissionsOrganizationCustomProperties.Admin => "admin",
+                AppPermissionsOrganizationCustomProperties.Read => "read",
+                AppPermissionsOrganizationCustomProperties.Write => "write",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static AppPermissionsOrganizationCustomProperties? ToEnum(string value)
+        {
+            return value switch
+            {
+                "admin" => AppPermissionsOrganizationCustomProperties.Admin,
+                "read" => AppPermissionsOrganizationCustomProperties.Read,
+                "write" => AppPermissionsOrganizationCustomProperties.Write,
+                _ => null,
+            };
+        }
+    }
+}

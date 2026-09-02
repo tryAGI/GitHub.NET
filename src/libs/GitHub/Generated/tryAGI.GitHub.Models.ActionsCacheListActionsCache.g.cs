@@ -1,0 +1,119 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public sealed partial class ActionsCacheListActionsCache
+    {
+        /// <summary>
+        /// Example: 2
+        /// </summary>
+        /// <example>2</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public int? Id { get; set; }
+
+        /// <summary>
+        /// Example: refs/heads/main
+        /// </summary>
+        /// <example>refs/heads/main</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ref")]
+        public string? Ref { get; set; }
+
+        /// <summary>
+        /// Example: Linux-node-958aff96db2d75d67787d1e634ae70b659de937b
+        /// </summary>
+        /// <example>Linux-node-958aff96db2d75d67787d1e634ae70b659de937b</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("key")]
+        public string? Key { get; set; }
+
+        /// <summary>
+        /// Example: 73885106f58cc52a7df9ec4d4a5622a5614813162cb516c759a30af6bf56e6f0
+        /// </summary>
+        /// <example>73885106f58cc52a7df9ec4d4a5622a5614813162cb516c759a30af6bf56e6f0</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("version")]
+        public string? Version { get; set; }
+
+        /// <summary>
+        /// Example: 2019-01-24T22:45:36.000Z
+        /// </summary>
+        /// <example>2019-01-24T22:45:36.000Z</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("last_accessed_at")]
+        public global::System.DateTime? LastAccessedAt { get; set; }
+
+        /// <summary>
+        /// Example: 2019-01-24T22:45:36.000Z
+        /// </summary>
+        /// <example>2019-01-24T22:45:36.000Z</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        public global::System.DateTime? CreatedAt { get; set; }
+
+        /// <summary>
+        /// Example: 1024
+        /// </summary>
+        /// <example>1024</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("size_in_bytes")]
+        public long? SizeInBytes { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsCacheListActionsCache" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Example: 2
+        /// </param>
+        /// <param name="ref">
+        /// Example: refs/heads/main
+        /// </param>
+        /// <param name="key">
+        /// Example: Linux-node-958aff96db2d75d67787d1e634ae70b659de937b
+        /// </param>
+        /// <param name="version">
+        /// Example: 73885106f58cc52a7df9ec4d4a5622a5614813162cb516c759a30af6bf56e6f0
+        /// </param>
+        /// <param name="lastAccessedAt">
+        /// Example: 2019-01-24T22:45:36.000Z
+        /// </param>
+        /// <param name="createdAt">
+        /// Example: 2019-01-24T22:45:36.000Z
+        /// </param>
+        /// <param name="sizeInBytes">
+        /// Example: 1024
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public ActionsCacheListActionsCache(
+            int? id,
+            string? @ref,
+            string? key,
+            string? version,
+            global::System.DateTime? lastAccessedAt,
+            global::System.DateTime? createdAt,
+            long? sizeInBytes)
+        {
+            this.Id = id;
+            this.Ref = @ref;
+            this.Key = key;
+            this.Version = version;
+            this.LastAccessedAt = lastAccessedAt;
+            this.CreatedAt = createdAt;
+            this.SizeInBytes = sizeInBytes;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsCacheListActionsCache" /> class.
+        /// </summary>
+        public ActionsCacheListActionsCache()
+        {
+        }
+
+    }
+}

@@ -1,0 +1,51 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// The state of the milestone.
+    /// </summary>
+    public enum WebhookPullRequestAutoMergeEnabledPullRequestMilestoneState
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Closed,
+        /// <summary>
+        ///
+        /// </summary>
+        Open,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestAutoMergeEnabledPullRequestMilestoneStateExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestAutoMergeEnabledPullRequestMilestoneState value)
+        {
+            return value switch
+            {
+                WebhookPullRequestAutoMergeEnabledPullRequestMilestoneState.Closed => "closed",
+                WebhookPullRequestAutoMergeEnabledPullRequestMilestoneState.Open => "open",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestAutoMergeEnabledPullRequestMilestoneState? ToEnum(string value)
+        {
+            return value switch
+            {
+                "closed" => WebhookPullRequestAutoMergeEnabledPullRequestMilestoneState.Closed,
+                "open" => WebhookPullRequestAutoMergeEnabledPullRequestMilestoneState.Open,
+                _ => null,
+            };
+        }
+    }
+}

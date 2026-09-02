@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhooksRelease1AssetUploaderType
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Bot,
+        /// <summary>
+        ///
+        /// </summary>
+        Organization,
+        /// <summary>
+        ///
+        /// </summary>
+        User,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhooksRelease1AssetUploaderTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhooksRelease1AssetUploaderType value)
+        {
+            return value switch
+            {
+                WebhooksRelease1AssetUploaderType.Bot => "Bot",
+                WebhooksRelease1AssetUploaderType.Organization => "Organization",
+                WebhooksRelease1AssetUploaderType.User => "User",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhooksRelease1AssetUploaderType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhooksRelease1AssetUploaderType.Bot,
+                "Organization" => WebhooksRelease1AssetUploaderType.Organization,
+                "User" => WebhooksRelease1AssetUploaderType.User,
+                _ => null,
+            };
+        }
+    }
+}

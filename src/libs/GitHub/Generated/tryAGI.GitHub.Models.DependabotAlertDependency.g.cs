@@ -1,0 +1,94 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// Details for the vulnerable dependency.<br/>
+    /// Included only in responses
+    /// </summary>
+    public sealed partial class DependabotAlertDependency
+    {
+        /// <summary>
+        /// Details for the vulnerable package.<br/>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("package")]
+        public global::tryAGI.GitHub.DependabotAlertPackage? Package { get; set; }
+
+        /// <summary>
+        /// The full path to the dependency manifest file, relative to the root of the repository.<br/>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("manifest_path")]
+        public string? ManifestPath { get; set; }
+
+        /// <summary>
+        /// The execution scope of the vulnerable dependency.<br/>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.GitHub.JsonConverters.DependabotAlertDependencyScopeJsonConverter))]
+        public global::tryAGI.GitHub.DependabotAlertDependencyScope? Scope { get; set; }
+
+        /// <summary>
+        /// The vulnerable dependency's relationship to your project.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.<br/>
+        /// Included only in responses
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("relationship")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.GitHub.JsonConverters.DependabotAlertDependencyRelationshipJsonConverter))]
+        public global::tryAGI.GitHub.DependabotAlertDependencyRelationship? Relationship { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependabotAlertDependency" /> class.
+        /// </summary>
+        /// <param name="package">
+        /// Details for the vulnerable package.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="manifestPath">
+        /// The full path to the dependency manifest file, relative to the root of the repository.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="scope">
+        /// The execution scope of the vulnerable dependency.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="relationship">
+        /// The vulnerable dependency's relationship to your project.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.<br/>
+        /// Included only in responses
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public DependabotAlertDependency(
+            global::tryAGI.GitHub.DependabotAlertPackage? package,
+            string? manifestPath,
+            global::tryAGI.GitHub.DependabotAlertDependencyScope? scope,
+            global::tryAGI.GitHub.DependabotAlertDependencyRelationship? relationship)
+        {
+            this.Package = package;
+            this.ManifestPath = manifestPath;
+            this.Scope = scope;
+            this.Relationship = relationship;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependabotAlertDependency" /> class.
+        /// </summary>
+        public DependabotAlertDependency()
+        {
+        }
+
+    }
+}

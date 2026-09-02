@@ -1,0 +1,71 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public sealed partial class WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChanges
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("condition_type")]
+        public global::tryAGI.GitHub.WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChangesConditionType? ConditionType { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("target")]
+        public global::tryAGI.GitHub.WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChangesTarget? Target { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include")]
+        public global::tryAGI.GitHub.WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChangesInclude? Include { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("exclude")]
+        public global::tryAGI.GitHub.WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChangesExclude? Exclude { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChanges" /> class.
+        /// </summary>
+        /// <param name="conditionType"></param>
+        /// <param name="target"></param>
+        /// <param name="include"></param>
+        /// <param name="exclude"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChanges(
+            global::tryAGI.GitHub.WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChangesConditionType? conditionType,
+            global::tryAGI.GitHub.WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChangesTarget? target,
+            global::tryAGI.GitHub.WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChangesInclude? include,
+            global::tryAGI.GitHub.WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChangesExclude? exclude)
+        {
+            this.ConditionType = conditionType;
+            this.Target = target;
+            this.Include = include;
+            this.Exclude = exclude;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChanges" /> class.
+        /// </summary>
+        public WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChanges()
+        {
+        }
+
+    }
+}

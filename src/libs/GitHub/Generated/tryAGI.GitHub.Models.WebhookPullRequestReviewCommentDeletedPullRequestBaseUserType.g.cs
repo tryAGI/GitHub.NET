@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhookPullRequestReviewCommentDeletedPullRequestBaseUserType
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Bot,
+        /// <summary>
+        ///
+        /// </summary>
+        Organization,
+        /// <summary>
+        ///
+        /// </summary>
+        User,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestReviewCommentDeletedPullRequestBaseUserTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestReviewCommentDeletedPullRequestBaseUserType value)
+        {
+            return value switch
+            {
+                WebhookPullRequestReviewCommentDeletedPullRequestBaseUserType.Bot => "Bot",
+                WebhookPullRequestReviewCommentDeletedPullRequestBaseUserType.Organization => "Organization",
+                WebhookPullRequestReviewCommentDeletedPullRequestBaseUserType.User => "User",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestReviewCommentDeletedPullRequestBaseUserType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookPullRequestReviewCommentDeletedPullRequestBaseUserType.Bot,
+                "Organization" => WebhookPullRequestReviewCommentDeletedPullRequestBaseUserType.Organization,
+                "User" => WebhookPullRequestReviewCommentDeletedPullRequestBaseUserType.User,
+                _ => null,
+            };
+        }
+    }
+}

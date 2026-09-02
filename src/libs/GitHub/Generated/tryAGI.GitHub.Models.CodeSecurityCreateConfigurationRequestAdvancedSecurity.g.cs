@@ -1,0 +1,66 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// The enablement status of GitHub Advanced Security features. `enabled` will enable both Code Security and Secret Protection features.<br/>
+    /// &gt; [!WARNING]<br/>
+    /// &gt; `code_security` and `secret_protection` are deprecated values for this field. Prefer the individual `code_security` and `secret_protection` fields to set the status of these features.<br/>
+    /// Default Value: disabled
+    /// </summary>
+    public enum CodeSecurityCreateConfigurationRequestAdvancedSecurity
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        CodeSecurity,
+        /// <summary>
+        ///
+        /// </summary>
+        Disabled,
+        /// <summary>
+        ///
+        /// </summary>
+        Enabled,
+        /// <summary>
+        ///
+        /// </summary>
+        SecretProtection,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class CodeSecurityCreateConfigurationRequestAdvancedSecurityExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this CodeSecurityCreateConfigurationRequestAdvancedSecurity value)
+        {
+            return value switch
+            {
+                CodeSecurityCreateConfigurationRequestAdvancedSecurity.CodeSecurity => "code_security",
+                CodeSecurityCreateConfigurationRequestAdvancedSecurity.Disabled => "disabled",
+                CodeSecurityCreateConfigurationRequestAdvancedSecurity.Enabled => "enabled",
+                CodeSecurityCreateConfigurationRequestAdvancedSecurity.SecretProtection => "secret_protection",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static CodeSecurityCreateConfigurationRequestAdvancedSecurity? ToEnum(string value)
+        {
+            return value switch
+            {
+                "code_security" => CodeSecurityCreateConfigurationRequestAdvancedSecurity.CodeSecurity,
+                "disabled" => CodeSecurityCreateConfigurationRequestAdvancedSecurity.Disabled,
+                "enabled" => CodeSecurityCreateConfigurationRequestAdvancedSecurity.Enabled,
+                "secret_protection" => CodeSecurityCreateConfigurationRequestAdvancedSecurity.SecretProtection,
+                _ => null,
+            };
+        }
+    }
+}

@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// Default Value: created
+    /// </summary>
+    public enum IssuesListSort
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Comments,
+        /// <summary>
+        ///
+        /// </summary>
+        Created,
+        /// <summary>
+        ///
+        /// </summary>
+        Updated,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class IssuesListSortExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this IssuesListSort value)
+        {
+            return value switch
+            {
+                IssuesListSort.Comments => "comments",
+                IssuesListSort.Created => "created",
+                IssuesListSort.Updated => "updated",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static IssuesListSort? ToEnum(string value)
+        {
+            return value switch
+            {
+                "comments" => IssuesListSort.Comments,
+                "created" => IssuesListSort.Created,
+                "updated" => IssuesListSort.Updated,
+                _ => null,
+            };
+        }
+    }
+}

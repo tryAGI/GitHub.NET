@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeamPrivacy
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Closed,
+        /// <summary>
+        ///
+        /// </summary>
+        Open,
+        /// <summary>
+        ///
+        /// </summary>
+        Secret,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeamPrivacyExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeamPrivacy value)
+        {
+            return value switch
+            {
+                WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeamPrivacy.Closed => "closed",
+                WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeamPrivacy.Open => "open",
+                WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeamPrivacy.Secret => "secret",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeamPrivacy? ToEnum(string value)
+        {
+            return value switch
+            {
+                "closed" => WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeamPrivacy.Closed,
+                "open" => WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeamPrivacy.Open,
+                "secret" => WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeamPrivacy.Secret,
+                _ => null,
+            };
+        }
+    }
+}

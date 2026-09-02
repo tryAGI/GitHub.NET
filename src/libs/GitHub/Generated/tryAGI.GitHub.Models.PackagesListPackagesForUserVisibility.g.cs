@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum PackagesListPackagesForUserVisibility
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Internal,
+        /// <summary>
+        ///
+        /// </summary>
+        Private,
+        /// <summary>
+        ///
+        /// </summary>
+        Public,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class PackagesListPackagesForUserVisibilityExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this PackagesListPackagesForUserVisibility value)
+        {
+            return value switch
+            {
+                PackagesListPackagesForUserVisibility.Internal => "internal",
+                PackagesListPackagesForUserVisibility.Private => "private",
+                PackagesListPackagesForUserVisibility.Public => "public",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static PackagesListPackagesForUserVisibility? ToEnum(string value)
+        {
+            return value switch
+            {
+                "internal" => PackagesListPackagesForUserVisibility.Internal,
+                "private" => PackagesListPackagesForUserVisibility.Private,
+                "public" => PackagesListPackagesForUserVisibility.Public,
+                _ => null,
+            };
+        }
+    }
+}

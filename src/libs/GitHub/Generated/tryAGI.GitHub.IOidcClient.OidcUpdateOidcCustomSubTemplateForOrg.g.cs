@@ -1,0 +1,61 @@
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    public partial interface IOidcClient
+    {
+        /// <summary>
+        /// Set the customization template for an OIDC subject claim for an organization<br/>
+        /// Creates or updates the customization template for an OpenID Connect (OIDC) subject claim.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.EmptyObject> OidcUpdateOidcCustomSubTemplateForOrgAsync(
+            string org,
+
+            global::tryAGI.GitHub.OidcUpdateOidcCustomSubTemplateForOrgRequest request,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Set the customization template for an OIDC subject claim for an organization<br/>
+        /// Creates or updates the customization template for an OpenID Connect (OIDC) subject claim.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.AutoSDKHttpResponse<global::tryAGI.GitHub.EmptyObject>> OidcUpdateOidcCustomSubTemplateForOrgAsResponseAsync(
+            string org,
+
+            global::tryAGI.GitHub.OidcUpdateOidcCustomSubTemplateForOrgRequest request,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Set the customization template for an OIDC subject claim for an organization<br/>
+        /// Creates or updates the customization template for an OpenID Connect (OIDC) subject claim.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="includeClaimKeys">
+        /// Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
+        /// </param>
+        /// <param name="useImmutableSubject">
+        /// Whether to opt in to the immutable OIDC subject claim format for the organization. When `true`, new OIDC tokens will use a stable, repository-ID-based `sub` claim instead of the name-based format.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.EmptyObject> OidcUpdateOidcCustomSubTemplateForOrgAsync(
+            string org,
+            global::System.Collections.Generic.IList<string>? includeClaimKeys = default,
+            bool? useImmutableSubject = default,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

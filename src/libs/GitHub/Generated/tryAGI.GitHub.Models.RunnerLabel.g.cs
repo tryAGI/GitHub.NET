@@ -1,0 +1,70 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// A label for a self hosted runner
+    /// </summary>
+    public sealed partial class RunnerLabel
+    {
+        /// <summary>
+        /// Unique identifier of the label.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public int? Id { get; set; }
+
+        /// <summary>
+        /// Name of the label.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
+
+        /// <summary>
+        /// The type of label. Read-only labels are applied automatically when the runner is configured.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.GitHub.JsonConverters.RunnerLabelTypeJsonConverter))]
+        public global::tryAGI.GitHub.RunnerLabelType? Type { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunnerLabel" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// Name of the label.
+        /// </param>
+        /// <param name="id">
+        /// Unique identifier of the label.
+        /// </param>
+        /// <param name="type">
+        /// The type of label. Read-only labels are applied automatically when the runner is configured.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public RunnerLabel(
+            string name,
+            int? id,
+            global::tryAGI.GitHub.RunnerLabelType? type)
+        {
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunnerLabel" /> class.
+        /// </summary>
+        public RunnerLabel()
+        {
+        }
+
+    }
+}

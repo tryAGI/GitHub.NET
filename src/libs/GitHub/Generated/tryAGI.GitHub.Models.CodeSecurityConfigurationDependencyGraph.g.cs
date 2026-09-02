@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// The enablement status of Dependency Graph
+    /// </summary>
+    public enum CodeSecurityConfigurationDependencyGraph
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Disabled,
+        /// <summary>
+        ///
+        /// </summary>
+        Enabled,
+        /// <summary>
+        ///
+        /// </summary>
+        NotSet,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class CodeSecurityConfigurationDependencyGraphExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this CodeSecurityConfigurationDependencyGraph value)
+        {
+            return value switch
+            {
+                CodeSecurityConfigurationDependencyGraph.Disabled => "disabled",
+                CodeSecurityConfigurationDependencyGraph.Enabled => "enabled",
+                CodeSecurityConfigurationDependencyGraph.NotSet => "not_set",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static CodeSecurityConfigurationDependencyGraph? ToEnum(string value)
+        {
+            return value switch
+            {
+                "disabled" => CodeSecurityConfigurationDependencyGraph.Disabled,
+                "enabled" => CodeSecurityConfigurationDependencyGraph.Enabled,
+                "not_set" => CodeSecurityConfigurationDependencyGraph.NotSet,
+                _ => null,
+            };
+        }
+    }
+}

@@ -1,0 +1,44 @@
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    public partial interface IOrgsClient
+    {
+        /// <summary>
+        /// Get an organization webhook<br/>
+        /// Returns a webhook configured in an organization. To get only the webhook<br/>
+        /// `config` properties, see "[Get a webhook configuration for an organization](/rest/orgs/webhooks#get-a-webhook-configuration-for-an-organization).<br/>
+        /// You must be an organization owner to use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit<br/>
+        /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="hookId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.OrgHook> OrgsGetWebhookAsync(
+            string org,
+            int hookId,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get an organization webhook<br/>
+        /// Returns a webhook configured in an organization. To get only the webhook<br/>
+        /// `config` properties, see "[Get a webhook configuration for an organization](/rest/orgs/webhooks#get-a-webhook-configuration-for-an-organization).<br/>
+        /// You must be an organization owner to use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit<br/>
+        /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="hookId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.AutoSDKHttpResponse<global::tryAGI.GitHub.OrgHook>> OrgsGetWebhookAsResponseAsync(
+            string org,
+            int hookId,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

@@ -1,0 +1,652 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    public partial class SecurityAdvisoriesClient
+    {
+        partial void PrepareSecurityAdvisoriesListGlobalAdvisoriesArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref string? ghsaId,
+            ref global::tryAGI.GitHub.SecurityAdvisoriesListGlobalAdvisoriesType? type,
+            ref string? cveId,
+            ref global::tryAGI.GitHub.SecurityAdvisoryEcosystems? ecosystem,
+            ref global::tryAGI.GitHub.SecurityAdvisoriesListGlobalAdvisoriesSeverity? severity,
+            ref global::tryAGI.GitHub.OneOf<string, global::System.Collections.Generic.IList<string>>? cwes,
+            ref bool? isWithdrawn,
+            ref global::tryAGI.GitHub.OneOf<string, global::System.Collections.Generic.IList<string>>? affects,
+            ref string? published,
+            ref string? updated,
+            ref string? modified,
+            ref string? epssPercentage,
+            ref string? epssPercentile,
+            ref string? before,
+            ref string? after,
+            ref global::tryAGI.GitHub.SecurityAdvisoriesListGlobalAdvisoriesDirection? direction,
+            ref int? perPage,
+            ref global::tryAGI.GitHub.SecurityAdvisoriesListGlobalAdvisoriesSort? sort);
+        partial void PrepareSecurityAdvisoriesListGlobalAdvisoriesRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string? ghsaId,
+            global::tryAGI.GitHub.SecurityAdvisoriesListGlobalAdvisoriesType? type,
+            string? cveId,
+            global::tryAGI.GitHub.SecurityAdvisoryEcosystems? ecosystem,
+            global::tryAGI.GitHub.SecurityAdvisoriesListGlobalAdvisoriesSeverity? severity,
+            global::tryAGI.GitHub.OneOf<string, global::System.Collections.Generic.IList<string>>? cwes,
+            bool? isWithdrawn,
+            global::tryAGI.GitHub.OneOf<string, global::System.Collections.Generic.IList<string>>? affects,
+            string? published,
+            string? updated,
+            string? modified,
+            string? epssPercentage,
+            string? epssPercentile,
+            string? before,
+            string? after,
+            global::tryAGI.GitHub.SecurityAdvisoriesListGlobalAdvisoriesDirection? direction,
+            int? perPage,
+            global::tryAGI.GitHub.SecurityAdvisoriesListGlobalAdvisoriesSort? sort);
+        partial void ProcessSecurityAdvisoriesListGlobalAdvisoriesResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessSecurityAdvisoriesListGlobalAdvisoriesResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
+        /// <summary>
+        /// List global security advisories<br/>
+        /// Lists all global security advisories that match the specified parameters. If no other parameters are defined, the request will return only GitHub-reviewed advisories that are not malware.<br/>
+        /// By default, all responses will exclude advisories for malware, because malware are not standard vulnerabilities. To list advisories for malware, you must include the `type` parameter in your request, with the value `malware`. For more information about the different types of security advisories, see "[About the GitHub Advisory database](https://docs.github.com/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database#about-types-of-security-advisories)."
+        /// </summary>
+        /// <param name="ghsaId"></param>
+        /// <param name="type">
+        /// Default Value: reviewed
+        /// </param>
+        /// <param name="cveId"></param>
+        /// <param name="ecosystem">
+        /// The package's language or package management ecosystem.
+        /// </param>
+        /// <param name="severity"></param>
+        /// <param name="cwes"></param>
+        /// <param name="isWithdrawn"></param>
+        /// <param name="affects"></param>
+        /// <param name="published"></param>
+        /// <param name="updated"></param>
+        /// <param name="modified"></param>
+        /// <param name="epssPercentage"></param>
+        /// <param name="epssPercentile"></param>
+        /// <param name="before"></param>
+        /// <param name="after"></param>
+        /// <param name="direction">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="sort">
+        /// Default Value: published
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::tryAGI.GitHub.GlobalAdvisory>> SecurityAdvisoriesListGlobalAdvisoriesAsync(
+            string? ghsaId = default,
+            global::tryAGI.GitHub.SecurityAdvisoriesListGlobalAdvisoriesType? type = default,
+            string? cveId = default,
+            global::tryAGI.GitHub.SecurityAdvisoryEcosystems? ecosystem = default,
+            global::tryAGI.GitHub.SecurityAdvisoriesListGlobalAdvisoriesSeverity? severity = default,
+            global::tryAGI.GitHub.OneOf<string, global::System.Collections.Generic.IList<string>>? cwes = default,
+            bool? isWithdrawn = default,
+            global::tryAGI.GitHub.OneOf<string, global::System.Collections.Generic.IList<string>>? affects = default,
+            string? published = default,
+            string? updated = default,
+            string? modified = default,
+            string? epssPercentage = default,
+            string? epssPercentile = default,
+            string? before = default,
+            string? after = default,
+            global::tryAGI.GitHub.SecurityAdvisoriesListGlobalAdvisoriesDirection? direction = default,
+            int? perPage = default,
+            global::tryAGI.GitHub.SecurityAdvisoriesListGlobalAdvisoriesSort? sort = default,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __response = await SecurityAdvisoriesListGlobalAdvisoriesAsResponseAsync(
+                ghsaId: ghsaId,
+                type: type,
+                cveId: cveId,
+                ecosystem: ecosystem,
+                severity: severity,
+                cwes: cwes,
+                isWithdrawn: isWithdrawn,
+                affects: affects,
+                published: published,
+                updated: updated,
+                modified: modified,
+                epssPercentage: epssPercentage,
+                epssPercentile: epssPercentile,
+                before: before,
+                after: after,
+                direction: direction,
+                perPage: perPage,
+                sort: sort,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List global security advisories<br/>
+        /// Lists all global security advisories that match the specified parameters. If no other parameters are defined, the request will return only GitHub-reviewed advisories that are not malware.<br/>
+        /// By default, all responses will exclude advisories for malware, because malware are not standard vulnerabilities. To list advisories for malware, you must include the `type` parameter in your request, with the value `malware`. For more information about the different types of security advisories, see "[About the GitHub Advisory database](https://docs.github.com/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database#about-types-of-security-advisories)."
+        /// </summary>
+        /// <param name="ghsaId"></param>
+        /// <param name="type">
+        /// Default Value: reviewed
+        /// </param>
+        /// <param name="cveId"></param>
+        /// <param name="ecosystem">
+        /// The package's language or package management ecosystem.
+        /// </param>
+        /// <param name="severity"></param>
+        /// <param name="cwes"></param>
+        /// <param name="isWithdrawn"></param>
+        /// <param name="affects"></param>
+        /// <param name="published"></param>
+        /// <param name="updated"></param>
+        /// <param name="modified"></param>
+        /// <param name="epssPercentage"></param>
+        /// <param name="epssPercentile"></param>
+        /// <param name="before"></param>
+        /// <param name="after"></param>
+        /// <param name="direction">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="sort">
+        /// Default Value: published
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::tryAGI.GitHub.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::tryAGI.GitHub.GlobalAdvisory>>> SecurityAdvisoriesListGlobalAdvisoriesAsResponseAsync(
+            string? ghsaId = default,
+            global::tryAGI.GitHub.SecurityAdvisoriesListGlobalAdvisoriesType? type = default,
+            string? cveId = default,
+            global::tryAGI.GitHub.SecurityAdvisoryEcosystems? ecosystem = default,
+            global::tryAGI.GitHub.SecurityAdvisoriesListGlobalAdvisoriesSeverity? severity = default,
+            global::tryAGI.GitHub.OneOf<string, global::System.Collections.Generic.IList<string>>? cwes = default,
+            bool? isWithdrawn = default,
+            global::tryAGI.GitHub.OneOf<string, global::System.Collections.Generic.IList<string>>? affects = default,
+            string? published = default,
+            string? updated = default,
+            string? modified = default,
+            string? epssPercentage = default,
+            string? epssPercentile = default,
+            string? before = default,
+            string? after = default,
+            global::tryAGI.GitHub.SecurityAdvisoriesListGlobalAdvisoriesDirection? direction = default,
+            int? perPage = default,
+            global::tryAGI.GitHub.SecurityAdvisoriesListGlobalAdvisoriesSort? sort = default,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            PrepareArguments(
+                client: HttpClient);
+            PrepareSecurityAdvisoriesListGlobalAdvisoriesArguments(
+                httpClient: HttpClient,
+                ghsaId: ref ghsaId,
+                type: ref type,
+                cveId: ref cveId,
+                ecosystem: ref ecosystem,
+                severity: ref severity,
+                cwes: ref cwes,
+                isWithdrawn: ref isWithdrawn,
+                affects: ref affects,
+                published: ref published,
+                updated: ref updated,
+                modified: ref modified,
+                epssPercentage: ref epssPercentage,
+                epssPercentile: ref epssPercentile,
+                before: ref before,
+                after: ref after,
+                direction: ref direction,
+                perPage: ref perPage,
+                sort: ref sort);
+
+            using var __timeoutCancellationTokenSource = global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken);
+            var __effectiveCancellationToken = __timeoutCancellationTokenSource?.Token ?? cancellationToken;
+            var __effectiveReadResponseAsString = global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.GetReadResponseAsString(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                fallbackValue: ReadResponseAsString);
+            var __maxAttempts = global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.GetMaxAttempts(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                supportsRetry: true);
+
+            global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
+            {
+
+                            var __pathBuilder = new global::tryAGI.GitHub.PathBuilder(
+                                path: "/advisories",
+                                baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("ghsa_id", ghsaId)
+                                .AddOptionalParameter("type", type?.ToValueString())
+                                .AddOptionalParameter("cve_id", cveId)
+                                .AddOptionalParameter("ecosystem", ecosystem?.ToValueString())
+                                .AddOptionalParameter("severity", severity?.ToValueString())
+                                .AddOptionalParameter("cwes", cwes?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
+                validate: false), delimiter: ",", explode: true)
+                                .AddOptionalParameter("is_withdrawn", isWithdrawn?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("affects", affects?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
+                validate: false), delimiter: ",", explode: true)
+                                .AddOptionalParameter("published", published)
+                                .AddOptionalParameter("updated", updated)
+                                .AddOptionalParameter("modified", modified)
+                                .AddOptionalParameter("epss_percentage", epssPercentage)
+                                .AddOptionalParameter("epss_percentile", epssPercentile)
+                                .AddOptionalParameter("before", before)
+                                .AddOptionalParameter("after", after)
+                                .AddOptionalParameter("direction", direction?.ToValueString())
+                                .AddOptionalParameter("per_page", perPage?.ToString())
+                                .AddOptionalParameter("sort", sort?.ToValueString())
+                                ;
+                            var __path = __pathBuilder.ToString();
+                __path = global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                    path: __path,
+                    clientParameters: Options.QueryParameters,
+                    requestParameters: requestOptions?.QueryParameters);
+                var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                    method: global::System.Net.Http.HttpMethod.Get,
+                    requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+                __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+                __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+                global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.ApplyHeaders(
+                    request: __httpRequest,
+                    clientHeaders: Options.Headers,
+                    requestHeaders: requestOptions?.Headers);
+
+                PrepareRequest(
+                    client: HttpClient,
+                    request: __httpRequest);
+                PrepareSecurityAdvisoriesListGlobalAdvisoriesRequest(
+                    httpClient: HttpClient,
+                    httpRequestMessage: __httpRequest,
+                    ghsaId: ghsaId,
+                    type: type,
+                    cveId: cveId,
+                    ecosystem: ecosystem,
+                    severity: severity,
+                    cwes: cwes,
+                    isWithdrawn: isWithdrawn,
+                    affects: affects,
+                    published: published,
+                    updated: updated,
+                    modified: modified,
+                    epssPercentage: epssPercentage,
+                    epssPercentile: epssPercentile,
+                    before: before,
+                    after: after,
+                    direction: direction,
+                    perPage: perPage,
+                    sort: sort);
+
+                return __httpRequest;
+            }
+
+            global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
+            global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
+            try
+            {
+                for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
+                {
+                    __attemptNumber = __attempt;
+                    __httpRequest = __CreateHttpRequest();
+                    await global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "SecurityAdvisoriesListGlobalAdvisories",
+                                methodName: "SecurityAdvisoriesListGlobalAdvisoriesAsync",
+                                pathTemplate: "\"/advisories\"",
+                                httpMethod: "GET",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                    try
+                    {
+                        __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                    }
+                    catch (global::System.Net.Http.HttpRequestException __exception)
+                    {
+                        var __retryDelay = global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        await global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "SecurityAdvisoriesListGlobalAdvisories",
+                                methodName: "SecurityAdvisoriesListGlobalAdvisoriesAsync",
+                                pathTemplate: "\"/advisories\"",
+                                httpMethod: "GET",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: __exception,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        if (!__willRetry)
+                        {
+                            throw;
+                        }
+
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    if (__response != null &&
+                        __attempt < __maxAttempts &&
+                        global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
+                    {
+                        var __retryDelay = global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
+                        await global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "SecurityAdvisoriesListGlobalAdvisories",
+                                methodName: "SecurityAdvisoriesListGlobalAdvisoriesAsync",
+                                pathTemplate: "\"/advisories\"",
+                                httpMethod: "GET",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        __response.Dispose();
+                        __response = null;
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    break;
+                }
+
+                if (__response == null)
+                {
+                    throw new global::System.InvalidOperationException("No response received.");
+                }
+
+                using (__response)
+                {
+
+                ProcessResponse(
+                    client: HttpClient,
+                    response: __response);
+                ProcessSecurityAdvisoriesListGlobalAdvisoriesResponse(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {
+                    await global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "SecurityAdvisoriesListGlobalAdvisories",
+                                methodName: "SecurityAdvisoriesListGlobalAdvisoriesAsync",
+                                pathTemplate: "\"/advisories\"",
+                                httpMethod: "GET",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                else
+                {
+                    await global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.GitHub.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "SecurityAdvisoriesListGlobalAdvisories",
+                                methodName: "SecurityAdvisoriesListGlobalAdvisoriesAsync",
+                                pathTemplate: "\"/advisories\"",
+                                httpMethod: "GET",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                            // Too many requests
+                            if ((int)__response.StatusCode == 429)
+                            {
+                                string? __content_429 = null;
+                                global::System.Exception? __exception_429 = null;
+                                global::tryAGI.GitHub.BasicError? __value_429 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_429 = global::tryAGI.GitHub.BasicError.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_429 = global::tryAGI.GitHub.BasicError.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_429 = __ex;
+                                }
+
+
+                                throw global::tryAGI.GitHub.ApiException<global::tryAGI.GitHub.BasicError>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_429,
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Validation failed, or the endpoint has been spammed.
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::tryAGI.GitHub.ValidationErrorSimple? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::tryAGI.GitHub.ValidationErrorSimple.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::tryAGI.GitHub.ValidationErrorSimple.FromJson(__content_422, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+
+                                throw global::tryAGI.GitHub.ApiException<global::tryAGI.GitHub.ValidationErrorSimple>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+
+                            if (__effectiveReadResponseAsString)
+                            {
+                                var __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                    __effectiveCancellationToken
+                #endif
+                                ).ConfigureAwait(false);
+
+                                ProcessResponseContent(
+                                    client: HttpClient,
+                                    response: __response,
+                                    content: ref __content);
+                                ProcessSecurityAdvisoriesListGlobalAdvisoriesResponseContent(
+                                    httpClient: HttpClient,
+                                    httpResponseMessage: __response,
+                                    content: ref __content);
+
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+
+                                    var __value = (global::System.Collections.Generic.IList<global::tryAGI.GitHub.GlobalAdvisory>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::tryAGI.GitHub.GlobalAdvisory>), JsonSerializerContext) ??
+                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::tryAGI.GitHub.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::tryAGI.GitHub.GlobalAdvisory>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::tryAGI.GitHub.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    throw global::tryAGI.GitHub.ApiException.Create(
+                                        statusCode: __response.StatusCode,
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value));
+                                }
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+                                    var __value = await global::tryAGI.GitHub.AutoSdkPolyfills.ReadFromJsonAsync<global::System.Collections.Generic.IList<global::tryAGI.GitHub.GlobalAdvisory>>(__response.Content, JsonSerializerContext, __effectiveCancellationToken).ConfigureAwait(false) ??
+                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::tryAGI.GitHub.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::tryAGI.GitHub.GlobalAdvisory>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::tryAGI.GitHub.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    string? __content = null;
+                                    try
+                                    {
+                                        __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                            __effectiveCancellationToken
+                #endif
+                                        ).ConfigureAwait(false);
+                                    }
+                                    catch (global::System.Exception)
+                                    {
+                                    }
+
+                                    throw global::tryAGI.GitHub.ApiException.Create(
+                                        statusCode: __response.StatusCode,
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value));
+                                }
+                            }
+
+                }
+            }
+            finally
+            {
+                __httpRequest?.Dispose();
+            }
+        }
+    }
+}

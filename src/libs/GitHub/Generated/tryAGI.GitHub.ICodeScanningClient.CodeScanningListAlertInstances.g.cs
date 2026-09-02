@@ -1,0 +1,78 @@
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    public partial interface ICodeScanningClient
+    {
+        /// <summary>
+        /// List instances of a code scanning alert<br/>
+        /// Lists all instances of the specified code scanning alert.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="alertNumber">
+        /// The security alert number.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="ref">
+        /// The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,<br/>
+        /// `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.
+        /// </param>
+        /// <param name="pr"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::tryAGI.GitHub.CodeScanningAlertInstanceList>> CodeScanningListAlertInstancesAsync(
+            string owner,
+            string repo,
+            int alertNumber,
+            int? page = default,
+            int? perPage = default,
+            string? @ref = default,
+            int? pr = default,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List instances of a code scanning alert<br/>
+        /// Lists all instances of the specified code scanning alert.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="alertNumber">
+        /// The security alert number.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="ref">
+        /// The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,<br/>
+        /// `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.
+        /// </param>
+        /// <param name="pr"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::tryAGI.GitHub.CodeScanningAlertInstanceList>>> CodeScanningListAlertInstancesAsResponseAsync(
+            string owner,
+            string repo,
+            int alertNumber,
+            int? page = default,
+            int? perPage = default,
+            string? @ref = default,
+            int? pr = default,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

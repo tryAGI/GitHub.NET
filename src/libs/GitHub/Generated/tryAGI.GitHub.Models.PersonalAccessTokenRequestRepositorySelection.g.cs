@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// Type of repository selection requested.
+    /// </summary>
+    public enum PersonalAccessTokenRequestRepositorySelection
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        All,
+        /// <summary>
+        ///
+        /// </summary>
+        None,
+        /// <summary>
+        ///
+        /// </summary>
+        Subset,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class PersonalAccessTokenRequestRepositorySelectionExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this PersonalAccessTokenRequestRepositorySelection value)
+        {
+            return value switch
+            {
+                PersonalAccessTokenRequestRepositorySelection.All => "all",
+                PersonalAccessTokenRequestRepositorySelection.None => "none",
+                PersonalAccessTokenRequestRepositorySelection.Subset => "subset",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static PersonalAccessTokenRequestRepositorySelection? ToEnum(string value)
+        {
+            return value switch
+            {
+                "all" => PersonalAccessTokenRequestRepositorySelection.All,
+                "none" => PersonalAccessTokenRequestRepositorySelection.None,
+                "subset" => PersonalAccessTokenRequestRepositorySelection.Subset,
+                _ => null,
+            };
+        }
+    }
+}

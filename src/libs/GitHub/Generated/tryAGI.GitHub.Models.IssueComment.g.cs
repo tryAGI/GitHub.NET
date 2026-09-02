@@ -1,0 +1,221 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// Comments provide a way for people to collaborate on an issue.
+    /// </summary>
+    public sealed partial class IssueComment
+    {
+        /// <summary>
+        /// Unique identifier of the issue comment<br/>
+        /// Example: 42
+        /// </summary>
+        /// <example>42</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required long Id { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string NodeId { get; set; }
+
+        /// <summary>
+        /// URL for the issue comment<br/>
+        /// Example: https://api.github.com/repositories/42/issues/comments/1
+        /// </summary>
+        /// <example>https://api.github.com/repositories/42/issues/comments/1</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("url")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Url { get; set; }
+
+        /// <summary>
+        /// Contents of the issue comment<br/>
+        /// Example: What version of Safari were you using when you observed this bug?
+        /// </summary>
+        /// <example>What version of Safari were you using when you observed this bug?</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("body")]
+        public string? Body { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("body_text")]
+        public string? BodyText { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("body_html")]
+        public string? BodyHtml { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string HtmlUrl { get; set; }
+
+        /// <summary>
+        /// A GitHub user.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public global::tryAGI.GitHub.NullableSimpleUser? User { get; set; }
+
+        /// <summary>
+        /// Example: 2011-04-14T16:00:49Z
+        /// </summary>
+        /// <example>2011-04-14T16:00:49Z</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTime CreatedAt { get; set; }
+
+        /// <summary>
+        /// Example: 2011-04-14T16:00:49Z
+        /// </summary>
+        /// <example>2011-04-14T16:00:49Z</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTime UpdatedAt { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("issue_url")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string IssueUrl { get; set; }
+
+        /// <summary>
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
+        /// </summary>
+        /// <example>OWNER</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.GitHub.JsonConverters.AuthorAssociationJsonConverter))]
+        public global::tryAGI.GitHub.AuthorAssociation? AuthorAssociation { get; set; }
+
+        /// <summary>
+        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("performed_via_github_app")]
+        public global::tryAGI.GitHub.NullableIntegration? PerformedViaGithubApp { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reactions")]
+        public global::tryAGI.GitHub.ReactionRollup? Reactions { get; set; }
+
+        /// <summary>
+        /// Context around who pinned an issue comment and when it was pinned.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pin")]
+        public global::tryAGI.GitHub.NullablePinnedIssueComment? Pin { get; set; }
+
+        /// <summary>
+        /// Details about why an issue comment was minimized.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("minimized")]
+        public global::tryAGI.GitHub.NullableIssueCommentMinimized? Minimized { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssueComment" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Unique identifier of the issue comment<br/>
+        /// Example: 42
+        /// </param>
+        /// <param name="nodeId"></param>
+        /// <param name="url">
+        /// URL for the issue comment<br/>
+        /// Example: https://api.github.com/repositories/42/issues/comments/1
+        /// </param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="createdAt">
+        /// Example: 2011-04-14T16:00:49Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2011-04-14T16:00:49Z
+        /// </param>
+        /// <param name="issueUrl"></param>
+        /// <param name="body">
+        /// Contents of the issue comment<br/>
+        /// Example: What version of Safari were you using when you observed this bug?
+        /// </param>
+        /// <param name="bodyText"></param>
+        /// <param name="bodyHtml"></param>
+        /// <param name="user">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="authorAssociation">
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
+        /// </param>
+        /// <param name="performedViaGithubApp">
+        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+        /// </param>
+        /// <param name="reactions"></param>
+        /// <param name="pin">
+        /// Context around who pinned an issue comment and when it was pinned.
+        /// </param>
+        /// <param name="minimized">
+        /// Details about why an issue comment was minimized.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public IssueComment(
+            long id,
+            string nodeId,
+            string url,
+            string htmlUrl,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string issueUrl,
+            string? body,
+            string? bodyText,
+            string? bodyHtml,
+            global::tryAGI.GitHub.NullableSimpleUser? user,
+            global::tryAGI.GitHub.AuthorAssociation? authorAssociation,
+            global::tryAGI.GitHub.NullableIntegration? performedViaGithubApp,
+            global::tryAGI.GitHub.ReactionRollup? reactions,
+            global::tryAGI.GitHub.NullablePinnedIssueComment? pin,
+            global::tryAGI.GitHub.NullableIssueCommentMinimized? minimized)
+        {
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Body = body;
+            this.BodyText = bodyText;
+            this.BodyHtml = bodyHtml;
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.User = user;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.IssueUrl = issueUrl ?? throw new global::System.ArgumentNullException(nameof(issueUrl));
+            this.AuthorAssociation = authorAssociation;
+            this.PerformedViaGithubApp = performedViaGithubApp;
+            this.Reactions = reactions;
+            this.Pin = pin;
+            this.Minimized = minimized;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssueComment" /> class.
+        /// </summary>
+        public IssueComment()
+        {
+        }
+
+    }
+}

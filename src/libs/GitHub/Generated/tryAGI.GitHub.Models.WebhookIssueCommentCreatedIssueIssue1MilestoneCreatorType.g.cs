@@ -1,0 +1,63 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Bot,
+        /// <summary>
+        ///
+        /// </summary>
+        Mannequin,
+        /// <summary>
+        ///
+        /// </summary>
+        Organization,
+        /// <summary>
+        ///
+        /// </summary>
+        User,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType value)
+        {
+            return value switch
+            {
+                WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.Bot => "Bot",
+                WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.Mannequin => "Mannequin",
+                WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.Organization => "Organization",
+                WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.User => "User",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.Bot,
+                "Mannequin" => WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.Mannequin,
+                "Organization" => WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.Organization,
+                "User" => WebhookIssueCommentCreatedIssueIssue1MilestoneCreatorType.User,
+                _ => null,
+            };
+        }
+    }
+}

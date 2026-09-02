@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhooksPullRequest5AutoMergeEnabledByType
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Bot,
+        /// <summary>
+        ///
+        /// </summary>
+        Organization,
+        /// <summary>
+        ///
+        /// </summary>
+        User,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhooksPullRequest5AutoMergeEnabledByTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhooksPullRequest5AutoMergeEnabledByType value)
+        {
+            return value switch
+            {
+                WebhooksPullRequest5AutoMergeEnabledByType.Bot => "Bot",
+                WebhooksPullRequest5AutoMergeEnabledByType.Organization => "Organization",
+                WebhooksPullRequest5AutoMergeEnabledByType.User => "User",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhooksPullRequest5AutoMergeEnabledByType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhooksPullRequest5AutoMergeEnabledByType.Bot,
+                "Organization" => WebhooksPullRequest5AutoMergeEnabledByType.Organization,
+                "User" => WebhooksPullRequest5AutoMergeEnabledByType.User,
+                _ => null,
+            };
+        }
+    }
+}

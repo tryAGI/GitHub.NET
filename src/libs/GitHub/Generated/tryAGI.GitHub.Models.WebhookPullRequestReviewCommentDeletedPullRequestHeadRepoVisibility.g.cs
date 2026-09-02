@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoVisibility
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Internal,
+        /// <summary>
+        ///
+        /// </summary>
+        Private,
+        /// <summary>
+        ///
+        /// </summary>
+        Public,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoVisibilityExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoVisibility value)
+        {
+            return value switch
+            {
+                WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoVisibility.Internal => "internal",
+                WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoVisibility.Private => "private",
+                WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoVisibility.Public => "public",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoVisibility? ToEnum(string value)
+        {
+            return value switch
+            {
+                "internal" => WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoVisibility.Internal,
+                "private" => WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoVisibility.Private,
+                "public" => WebhookPullRequestReviewCommentDeletedPullRequestHeadRepoVisibility.Public,
+                _ => null,
+            };
+        }
+    }
+}

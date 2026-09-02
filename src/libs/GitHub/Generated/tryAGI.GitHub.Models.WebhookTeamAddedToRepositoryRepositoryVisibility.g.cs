@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhookTeamAddedToRepositoryRepositoryVisibility
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Internal,
+        /// <summary>
+        ///
+        /// </summary>
+        Private,
+        /// <summary>
+        ///
+        /// </summary>
+        Public,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookTeamAddedToRepositoryRepositoryVisibilityExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookTeamAddedToRepositoryRepositoryVisibility value)
+        {
+            return value switch
+            {
+                WebhookTeamAddedToRepositoryRepositoryVisibility.Internal => "internal",
+                WebhookTeamAddedToRepositoryRepositoryVisibility.Private => "private",
+                WebhookTeamAddedToRepositoryRepositoryVisibility.Public => "public",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookTeamAddedToRepositoryRepositoryVisibility? ToEnum(string value)
+        {
+            return value switch
+            {
+                "internal" => WebhookTeamAddedToRepositoryRepositoryVisibility.Internal,
+                "private" => WebhookTeamAddedToRepositoryRepositoryVisibility.Private,
+                "public" => WebhookTeamAddedToRepositoryRepositoryVisibility.Public,
+                _ => null,
+            };
+        }
+    }
+}

@@ -1,0 +1,58 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// Whether a prebuild is currently available when creating a codespace for this machine and repository. If a branch was not specified as a ref, the default branch will be assumed. Value will be "null" if prebuilds are not supported or prebuild availability could not be determined. Value will be "none" if no prebuild is available. Latest values "ready" and "in_progress" indicate the prebuild availability status.<br/>
+    /// Example: ready
+    /// </summary>
+    public enum CodespaceMachinePrebuildAvailability
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        InProgress,
+        /// <summary>
+        ///
+        /// </summary>
+        None,
+        /// <summary>
+        ///
+        /// </summary>
+        Ready,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class CodespaceMachinePrebuildAvailabilityExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this CodespaceMachinePrebuildAvailability value)
+        {
+            return value switch
+            {
+                CodespaceMachinePrebuildAvailability.InProgress => "in_progress",
+                CodespaceMachinePrebuildAvailability.None => "none",
+                CodespaceMachinePrebuildAvailability.Ready => "ready",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static CodespaceMachinePrebuildAvailability? ToEnum(string value)
+        {
+            return value switch
+            {
+                "in_progress" => CodespaceMachinePrebuildAvailability.InProgress,
+                "none" => CodespaceMachinePrebuildAvailability.None,
+                "ready" => CodespaceMachinePrebuildAvailability.Ready,
+                _ => null,
+            };
+        }
+    }
+}

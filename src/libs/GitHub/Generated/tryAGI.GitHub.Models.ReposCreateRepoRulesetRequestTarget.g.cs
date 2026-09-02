@@ -1,0 +1,58 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// The target of the ruleset<br/>
+    /// Default Value: branch
+    /// </summary>
+    public enum ReposCreateRepoRulesetRequestTarget
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Branch,
+        /// <summary>
+        ///
+        /// </summary>
+        Push,
+        /// <summary>
+        ///
+        /// </summary>
+        Tag,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ReposCreateRepoRulesetRequestTargetExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ReposCreateRepoRulesetRequestTarget value)
+        {
+            return value switch
+            {
+                ReposCreateRepoRulesetRequestTarget.Branch => "branch",
+                ReposCreateRepoRulesetRequestTarget.Push => "push",
+                ReposCreateRepoRulesetRequestTarget.Tag => "tag",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ReposCreateRepoRulesetRequestTarget? ToEnum(string value)
+        {
+            return value switch
+            {
+                "branch" => ReposCreateRepoRulesetRequestTarget.Branch,
+                "push" => ReposCreateRepoRulesetRequestTarget.Push,
+                "tag" => ReposCreateRepoRulesetRequestTarget.Tag,
+                _ => null,
+            };
+        }
+    }
+}

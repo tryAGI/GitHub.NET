@@ -1,14 +1,13 @@
-dotnet tool install --global autosdk.cli --prerelease
-rm -rf Generated
-curl -o openapi.yaml https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.yaml
-# dotnet run --project ../../helpers/FixOpenApiSpec openapi.yaml
-# if [ $? -ne 0 ]; then
-#   echo "Failed, exiting..."
-#   exit 1
-# fi
+dotnet tool update --global autosdk.cli --version 0.34.2
+curl --fail --location --output openapi.yaml https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.yaml
 autosdk generate openapi.yaml \
-  --namespace GitHub \
+  --namespace tryAGI.GitHub \
   --clientClassName GitHubClient \
   --targetFramework net8.0 \
   --output Generated \
-  --exclude-deprecated-operations
+  --exclude-deprecated-operations \
+  --generate-http-exception-hierarchy \
+  --generate-pageable-helpers \
+  --generate-retry-handler \
+  --use-system-net-http-json \
+  --clean-stale-files

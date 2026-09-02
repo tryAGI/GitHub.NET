@@ -1,0 +1,1317 @@
+#nullable enable
+#pragma warning disable CS0618 // Type or member is obsolete
+
+namespace tryAGI.GitHub.JsonConverters
+{
+    /// <inheritdoc />
+    public class RepositoryRuleDetailedJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.GitHub.RepositoryRuleDetailed>
+    {
+        /// <inheritdoc />
+        public override global::tryAGI.GitHub.RepositoryRuleDetailed Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+
+
+            using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
+            var __rawJson = __jsonDocument.RootElement.GetRawText();
+            var __jsonProps = new global::System.Collections.Generic.HashSet<string>();
+            if (__jsonDocument.RootElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+            {
+                foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
+                {
+                    __jsonProps.Add(__jsonProp.Name);
+                }
+            }
+
+            var __score0 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCreation, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score0++;
+                    }
+                }
+            }
+            var __score1 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleUpdate, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score1++;
+                    }
+                }
+            }
+            var __score2 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleDeletion, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score2++;
+                    }
+                }
+            }
+            var __score3 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredLinearHistory, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score3++;
+                    }
+                }
+            }
+            var __score4 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMergeQueue, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score4++;
+                    }
+                }
+            }
+            var __score5 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredDeployments, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score5++;
+                    }
+                }
+            }
+            var __score6 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredSignatures, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score6++;
+                    }
+                }
+            }
+            var __score7 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRulePullRequest, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score7++;
+                    }
+                }
+            }
+            var __score8 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredStatusChecks, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score8++;
+                    }
+                }
+            }
+            var __score9 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleNonFastForward, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score9++;
+                    }
+                }
+            }
+            var __score10 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitMessagePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score10++;
+                    }
+                }
+            }
+            var __score11 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitAuthorEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score11++;
+                    }
+                }
+            }
+            var __score12 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitterEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score12++;
+                    }
+                }
+            }
+            var __score13 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleBranchNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score13++;
+                    }
+                }
+            }
+            var __score14 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleTagNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score14++;
+                    }
+                }
+            }
+            var __score15 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleWorkflows, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score15++;
+                    }
+                }
+            }
+            var __score16 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCodeScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score16++;
+                    }
+                }
+            }
+            var __score17 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCopilotCodeReview, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score17++;
+                    }
+                }
+            }
+            var __score18 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleLicenseComplianceScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score18++;
+                    }
+                }
+            }
+            var __score19 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFilePathRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score19++;
+                    }
+                }
+            }
+            var __score20 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFilePathLength, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score20++;
+                    }
+                }
+            }
+            var __score21 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFileExtensionRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score21++;
+                    }
+                }
+            }
+            var __score22 = 0;
+            {
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFileSize, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options);
+                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+                {
+                    foreach (var __prop in __ti.Properties)
+                    {
+                        if (__jsonProps.Contains(__prop.Name)) __score22++;
+                    }
+                }
+            }
+            var __bestScore = 0;
+            var __bestIndex = -1;
+            if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
+            if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
+            if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
+            if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
+            if (__score4 > __bestScore) { __bestScore = __score4; __bestIndex = 4; }
+            if (__score5 > __bestScore) { __bestScore = __score5; __bestIndex = 5; }
+            if (__score6 > __bestScore) { __bestScore = __score6; __bestIndex = 6; }
+            if (__score7 > __bestScore) { __bestScore = __score7; __bestIndex = 7; }
+            if (__score8 > __bestScore) { __bestScore = __score8; __bestIndex = 8; }
+            if (__score9 > __bestScore) { __bestScore = __score9; __bestIndex = 9; }
+            if (__score10 > __bestScore) { __bestScore = __score10; __bestIndex = 10; }
+            if (__score11 > __bestScore) { __bestScore = __score11; __bestIndex = 11; }
+            if (__score12 > __bestScore) { __bestScore = __score12; __bestIndex = 12; }
+            if (__score13 > __bestScore) { __bestScore = __score13; __bestIndex = 13; }
+            if (__score14 > __bestScore) { __bestScore = __score14; __bestIndex = 14; }
+            if (__score15 > __bestScore) { __bestScore = __score15; __bestIndex = 15; }
+            if (__score16 > __bestScore) { __bestScore = __score16; __bestIndex = 16; }
+            if (__score17 > __bestScore) { __bestScore = __score17; __bestIndex = 17; }
+            if (__score18 > __bestScore) { __bestScore = __score18; __bestIndex = 18; }
+            if (__score19 > __bestScore) { __bestScore = __score19; __bestIndex = 19; }
+            if (__score20 > __bestScore) { __bestScore = __score20; __bestIndex = 20; }
+            if (__score21 > __bestScore) { __bestScore = __score21; __bestIndex = 21; }
+            if (__score22 > __bestScore) { __bestScore = __score22; __bestIndex = 22; }
+
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCreation, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant1 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleUpdate, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant2 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleDeletion, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant3 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredLinearHistory, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant4 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMergeQueue, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant5 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredDeployments, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant6 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredSignatures, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant7 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRulePullRequest, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant8 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredStatusChecks, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant9 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleNonFastForward, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant10 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitMessagePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant11 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitAuthorEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant12 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitterEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant13 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleBranchNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant14 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleTagNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant15 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleWorkflows, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant16 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCodeScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant17 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCopilotCodeReview, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant18 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleLicenseComplianceScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant19 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFilePathRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant20 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFilePathLength, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant21 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFileExtensionRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant22 = default;
+            global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFileSize, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>? repositoryRuleDetailedVariant23 = default;
+            if (__bestIndex >= 0)
+            {
+                if (__bestIndex == 0)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCreation, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCreation, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCreation, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 1)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleUpdate, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleUpdate, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleUpdate, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 2)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleDeletion, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleDeletion, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleDeletion, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 3)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredLinearHistory, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredLinearHistory, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredLinearHistory, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 4)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMergeQueue, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMergeQueue, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMergeQueue, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 5)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredDeployments, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredDeployments, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredDeployments, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant6 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 6)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredSignatures, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredSignatures, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredSignatures, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant7 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 7)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRulePullRequest, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRulePullRequest, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRulePullRequest, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant8 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 8)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredStatusChecks, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredStatusChecks, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredStatusChecks, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant9 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 9)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleNonFastForward, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleNonFastForward, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleNonFastForward, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 10)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitMessagePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitMessagePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitMessagePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant11 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 11)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitAuthorEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitAuthorEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitAuthorEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant12 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 12)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitterEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitterEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitterEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant13 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 13)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleBranchNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleBranchNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleBranchNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant14 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 14)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleTagNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleTagNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleTagNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant15 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 15)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleWorkflows, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleWorkflows, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleWorkflows, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant16 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 16)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCodeScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCodeScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCodeScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant17 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 17)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCopilotCodeReview, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCopilotCodeReview, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCopilotCodeReview, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant18 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 18)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleLicenseComplianceScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleLicenseComplianceScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleLicenseComplianceScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant19 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 19)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFilePathRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFilePathRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFilePathRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant20 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 20)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFilePathLength, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFilePathLength, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFilePathLength, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant21 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 21)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFileExtensionRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFileExtensionRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFileExtensionRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant22 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+
+                else if (__bestIndex == 22)
+                {
+                    try
+                    {
+
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFileSize, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFileSize, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFileSize, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                        repositoryRuleDetailedVariant23 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCreation, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCreation, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCreation, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleUpdate, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleUpdate, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleUpdate, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleDeletion, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleDeletion, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleDeletion, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredLinearHistory, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredLinearHistory, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredLinearHistory, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMergeQueue, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMergeQueue, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMergeQueue, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredDeployments, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredDeployments, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredDeployments, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant6 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredSignatures, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredSignatures, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredSignatures, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant7 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRulePullRequest, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRulePullRequest, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRulePullRequest, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant8 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredStatusChecks, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredStatusChecks, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredStatusChecks, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant9 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleNonFastForward, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleNonFastForward, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleNonFastForward, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitMessagePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitMessagePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitMessagePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant11 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitAuthorEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitAuthorEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitAuthorEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant12 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitterEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitterEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitterEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant13 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleBranchNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleBranchNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleBranchNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant14 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleTagNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleTagNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleTagNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant15 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleWorkflows, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleWorkflows, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleWorkflows, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant16 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCodeScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCodeScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCodeScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant17 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCopilotCodeReview, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCopilotCodeReview, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCopilotCodeReview, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant18 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleLicenseComplianceScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleLicenseComplianceScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleLicenseComplianceScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant19 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFilePathRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFilePathRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFilePathRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant20 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFilePathLength, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFilePathLength, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFilePathLength, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant21 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFileExtensionRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFileExtensionRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFileExtensionRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant22 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null && repositoryRuleDetailedVariant18 == null && repositoryRuleDetailedVariant19 == null && repositoryRuleDetailedVariant20 == null && repositoryRuleDetailedVariant21 == null && repositoryRuleDetailedVariant22 == null && repositoryRuleDetailedVariant23 == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFileSize, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFileSize, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFileSize, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                    repositoryRuleDetailedVariant23 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            var __value = new global::tryAGI.GitHub.RepositoryRuleDetailed(
+                repositoryRuleDetailedVariant1,
+
+                repositoryRuleDetailedVariant2,
+
+                repositoryRuleDetailedVariant3,
+
+                repositoryRuleDetailedVariant4,
+
+                repositoryRuleDetailedVariant5,
+
+                repositoryRuleDetailedVariant6,
+
+                repositoryRuleDetailedVariant7,
+
+                repositoryRuleDetailedVariant8,
+
+                repositoryRuleDetailedVariant9,
+
+                repositoryRuleDetailedVariant10,
+
+                repositoryRuleDetailedVariant11,
+
+                repositoryRuleDetailedVariant12,
+
+                repositoryRuleDetailedVariant13,
+
+                repositoryRuleDetailedVariant14,
+
+                repositoryRuleDetailedVariant15,
+
+                repositoryRuleDetailedVariant16,
+
+                repositoryRuleDetailedVariant17,
+
+                repositoryRuleDetailedVariant18,
+
+                repositoryRuleDetailedVariant19,
+
+                repositoryRuleDetailedVariant20,
+
+                repositoryRuleDetailedVariant21,
+
+                repositoryRuleDetailedVariant22,
+
+                repositoryRuleDetailedVariant23
+                );
+
+            return __value;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::tryAGI.GitHub.RepositoryRuleDetailed value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+
+            if (value.IsRepositoryRuleDetailedVariant1)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCreation, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCreation, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCreation, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant1!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant2)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleUpdate, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleUpdate, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleUpdate, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant2!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant3)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleDeletion, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleDeletion, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleDeletion, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant3!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant4)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredLinearHistory, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredLinearHistory, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredLinearHistory, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant4!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant5)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMergeQueue, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMergeQueue, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMergeQueue, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant5!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant6)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredDeployments, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredDeployments, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredDeployments, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant6!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant7)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredSignatures, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredSignatures, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredSignatures, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant7!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant8)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRulePullRequest, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRulePullRequest, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRulePullRequest, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant8!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant9)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredStatusChecks, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredStatusChecks, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleRequiredStatusChecks, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant9!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant10)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleNonFastForward, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleNonFastForward, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleNonFastForward, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant10!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant11)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitMessagePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitMessagePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitMessagePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant11!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant12)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitAuthorEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitAuthorEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitAuthorEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant12!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant13)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitterEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitterEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCommitterEmailPattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant13!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant14)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleBranchNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleBranchNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleBranchNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant14!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant15)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleTagNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleTagNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleTagNamePattern, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant15!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant16)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleWorkflows, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleWorkflows, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleWorkflows, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant16!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant17)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCodeScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCodeScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCodeScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant17!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant18)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCopilotCodeReview, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCopilotCodeReview, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleCopilotCodeReview, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant18!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant19)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleLicenseComplianceScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleLicenseComplianceScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleLicenseComplianceScanning, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant19!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant20)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFilePathRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFilePathRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFilePathRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant20!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant21)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFilePathLength, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFilePathLength, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFilePathLength, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant21!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant22)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFileExtensionRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFileExtensionRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleFileExtensionRestriction, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant22!.Value, typeInfo);
+            }
+            else if (value.IsRepositoryRuleDetailedVariant23)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFileSize, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFileSize, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.GitHub.AllOf<global::tryAGI.GitHub.RepositoryRuleMaxFileSize, global::tryAGI.GitHub.RepositoryRuleRulesetInfo>).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RepositoryRuleDetailedVariant23!.Value, typeInfo);
+            }
+        }
+    }
+}

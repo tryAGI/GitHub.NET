@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// The enablement status of secret scanning
+    /// </summary>
+    public enum CodeSecurityUpdateConfigurationRequestSecretScanning
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Disabled,
+        /// <summary>
+        ///
+        /// </summary>
+        Enabled,
+        /// <summary>
+        ///
+        /// </summary>
+        NotSet,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class CodeSecurityUpdateConfigurationRequestSecretScanningExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this CodeSecurityUpdateConfigurationRequestSecretScanning value)
+        {
+            return value switch
+            {
+                CodeSecurityUpdateConfigurationRequestSecretScanning.Disabled => "disabled",
+                CodeSecurityUpdateConfigurationRequestSecretScanning.Enabled => "enabled",
+                CodeSecurityUpdateConfigurationRequestSecretScanning.NotSet => "not_set",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static CodeSecurityUpdateConfigurationRequestSecretScanning? ToEnum(string value)
+        {
+            return value switch
+            {
+                "disabled" => CodeSecurityUpdateConfigurationRequestSecretScanning.Disabled,
+                "enabled" => CodeSecurityUpdateConfigurationRequestSecretScanning.Enabled,
+                "not_set" => CodeSecurityUpdateConfigurationRequestSecretScanning.NotSet,
+                _ => null,
+            };
+        }
+    }
+}

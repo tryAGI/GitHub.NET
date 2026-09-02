@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
+    /// </summary>
+    public enum RuleSuiteEvaluationResult
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Bypass,
+        /// <summary>
+        ///
+        /// </summary>
+        Fail,
+        /// <summary>
+        ///
+        /// </summary>
+        Pass,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class RuleSuiteEvaluationResultExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this RuleSuiteEvaluationResult value)
+        {
+            return value switch
+            {
+                RuleSuiteEvaluationResult.Bypass => "bypass",
+                RuleSuiteEvaluationResult.Fail => "fail",
+                RuleSuiteEvaluationResult.Pass => "pass",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static RuleSuiteEvaluationResult? ToEnum(string value)
+        {
+            return value switch
+            {
+                "bypass" => RuleSuiteEvaluationResult.Bypass,
+                "fail" => RuleSuiteEvaluationResult.Fail,
+                "pass" => RuleSuiteEvaluationResult.Pass,
+                _ => null,
+            };
+        }
+    }
+}

@@ -1,0 +1,300 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// GitHub's v3 REST API.<br/>
+    /// If no httpClient is provided, a new one will be created.<br/>
+    /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+    /// </summary>
+    public partial interface IGitHubClient : global::System.IDisposable
+    {
+        /// <summary>
+        /// The HttpClient instance.
+        /// </summary>
+        public global::System.Net.Http.HttpClient HttpClient { get; }
+
+        /// <summary>
+        /// The base URL for the API.
+        /// </summary>
+        public System.Uri? BaseUri { get; }
+
+
+        /// <summary>
+        /// The server options available for this client.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::tryAGI.GitHub.AutoSDKServer> AvailableServers { get; }
+
+        /// <summary>
+        /// The currently selected server for this client, if any.
+        /// </summary>
+        public global::tryAGI.GitHub.AutoSDKServer? SelectedServer { get; set; }
+
+        /// <summary>
+        /// Selects one of the generated server options by id.
+        /// </summary>
+        public bool TrySelectServer(string serverId);
+
+        /// <summary>
+        /// Clears the currently selected server.
+        /// </summary>
+        public void ClearSelectedServer();
+
+        /// <summary>
+        /// The authorizations to use for the requests.
+        /// </summary>
+        public global::System.Collections.Generic.List<global::tryAGI.GitHub.EndPointAuthorization> Authorizations { get; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the response content should be read as a string.
+        /// True by default in debug builds, false otherwise.
+        /// When false, successful responses are deserialized directly from the response stream for better performance.
+        /// Error responses are always read as strings regardless of this setting,
+        /// ensuring <see cref="ApiException.ResponseBody"/> is populated.
+        /// </summary>
+        public bool ReadResponseAsString { get; set; }
+        /// <summary>
+        /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
+        /// </summary>
+        public global::tryAGI.GitHub.AutoSDKClientOptions Options { get; }
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
+
+
+        /// <summary>
+        /// Endpoints to manage GitHub Actions using the REST API.
+        /// </summary>
+        public ActionsClient Actions { get; }
+
+        /// <summary>
+        /// Activity APIs provide access to notifications, subscriptions, and timelines.
+        /// </summary>
+        public ActivityClient Activity { get; }
+
+        /// <summary>
+        /// Endpoints to manage and interact with agent tasks.
+        /// </summary>
+        public AgentTasksClient AgentTasks { get; }
+
+        /// <summary>
+        /// Endpoints for Agents secrets and variables.
+        /// </summary>
+        public AgentsClient Agents { get; }
+
+        /// <summary>
+        /// Information for integrations and installations.
+        /// </summary>
+        public AppsClient Apps { get; }
+
+        /// <summary>
+        /// Monitor charges and usage from Actions and Packages.
+        /// </summary>
+        public BillingClient Billing { get; }
+
+        /// <summary>
+        /// Endpoints to manage campaigns via the REST API.
+        /// </summary>
+        public CampaignsClient Campaigns { get; }
+
+        /// <summary>
+        /// Rich interactions with checks run by your integrations.
+        /// </summary>
+        public ChecksClient Checks { get; }
+
+        /// <summary>
+        /// Insights into reliability, maintainability, and efficiency of your codebase.
+        /// </summary>
+        public CodeQualityClient CodeQuality { get; }
+
+        /// <summary>
+        /// Retrieve code scanning alerts from a repository.
+        /// </summary>
+        public CodeScanningClient CodeScanning { get; }
+
+        /// <summary>
+        /// Endpoints to manage Code security using the REST API.
+        /// </summary>
+        public CodeSecurityClient CodeSecurity { get; }
+
+        /// <summary>
+        /// Insight into codes of conduct for your communities.
+        /// </summary>
+        public CodesOfConductClient CodesOfConduct { get; }
+
+        /// <summary>
+        /// Endpoints to manage Codespaces using the REST API.
+        /// </summary>
+        public CodespacesClient Codespaces { get; }
+
+        /// <summary>
+        /// Endpoints to manage Copilot using the REST API.
+        /// </summary>
+        public CopilotClient Copilot { get; }
+
+        /// <summary>
+        /// Endpoints to manage Copilot Spaces using the REST API.
+        /// </summary>
+        public CopilotSpacesClient CopilotSpaces { get; }
+
+        /// <summary>
+        /// Revoke compromised or leaked GitHub credentials.
+        /// </summary>
+        public CredentialsClient Credentials { get; }
+
+        /// <summary>
+        /// Endpoints to manage Dependabot.
+        /// </summary>
+        public DependabotClient Dependabot { get; }
+
+        /// <summary>
+        /// Endpoints to access Dependency Graph features.
+        /// </summary>
+        public DependencyGraphClient DependencyGraph { get; }
+
+        /// <summary>
+        /// List emojis available to use on GitHub.
+        /// </summary>
+        public EmojisClient Emojis { get; }
+
+        /// <summary>
+        /// Endpoints to manage GitHub Enterprise Team memberships.
+        /// </summary>
+        public EnterpriseTeamMembershipsClient EnterpriseTeamMemberships { get; }
+
+        /// <summary>
+        /// Endpoints to manage GitHub Enterprise Team organization assignments.
+        /// </summary>
+        public EnterpriseTeamOrganizationsClient EnterpriseTeamOrganizations { get; }
+
+        /// <summary>
+        /// Endpoints to manage GitHub Enterprise Teams.
+        /// </summary>
+        public EnterpriseTeamsClient EnterpriseTeams { get; }
+
+        /// <summary>
+        /// View, modify your gists.
+        /// </summary>
+        public GistsClient Gists { get; }
+
+        /// <summary>
+        /// Raw Git functionality.
+        /// </summary>
+        public GitClient Git { get; }
+
+        /// <summary>
+        /// View gitignore templates.
+        /// </summary>
+        public GitignoreClient Gitignore { get; }
+
+        /// <summary>
+        /// Manage hosted compute networking resources.
+        /// </summary>
+        public HostedComputeClient HostedCompute { get; }
+
+        /// <summary>
+        /// Owner or admin management of users interactions.
+        /// </summary>
+        public InteractionsClient Interactions { get; }
+
+        /// <summary>
+        /// Interact with GitHub Issues.
+        /// </summary>
+        public IssuesClient Issues { get; }
+
+        /// <summary>
+        /// View various OSS licenses.
+        /// </summary>
+        public LicensesClient Licenses { get; }
+
+        /// <summary>
+        /// Render GitHub flavored Markdown.
+        /// </summary>
+        public MarkdownClient Markdown { get; }
+
+        /// <summary>
+        /// Endpoints that give information about the API.
+        /// </summary>
+        public MetaClient Meta { get; }
+
+        /// <summary>
+        /// Move projects to or from GitHub.
+        /// </summary>
+        public MigrationsClient Migrations { get; }
+
+        /// <summary>
+        /// Endpoints to manage GitHub OIDC configuration using the REST API.
+        /// </summary>
+        public OidcClient Oidc { get; }
+
+        /// <summary>
+        /// Interact with organizations.
+        /// </summary>
+        public OrgsClient Orgs { get; }
+
+        /// <summary>
+        /// Manage packages for authenticated users and organizations.
+        /// </summary>
+        public PackagesClient Packages { get; }
+
+        /// <summary>
+        /// Manage private registry configurations.
+        /// </summary>
+        public PrivateRegistriesClient PrivateRegistries { get; }
+
+        /// <summary>
+        /// Endpoints to manage Projects using the REST API.
+        /// </summary>
+        public ProjectsClient Projects { get; }
+
+        /// <summary>
+        /// Interact with GitHub Pull Requests.
+        /// </summary>
+        public PullsClient Pulls { get; }
+
+        /// <summary>
+        /// Check your current rate limit status.
+        /// </summary>
+        public RateLimitClient RateLimit { get; }
+
+        /// <summary>
+        /// Interact with reactions to various GitHub entities.
+        /// </summary>
+        public ReactionsClient Reactions { get; }
+
+        /// <summary>
+        /// Interact with GitHub Repos.
+        /// </summary>
+        public ReposClient Repos { get; }
+
+        /// <summary>
+        /// Search for specific items on GitHub.
+        /// </summary>
+        public SearchClient Search { get; }
+
+        /// <summary>
+        /// Retrieve secret scanning alerts from a repository.
+        /// </summary>
+        public SecretScanningClient SecretScanning { get; }
+
+        /// <summary>
+        /// Manage security advisories.
+        /// </summary>
+        public SecurityAdvisoriesClient SecurityAdvisories { get; }
+
+        /// <summary>
+        /// Interact with GitHub Teams.
+        /// </summary>
+        public TeamsClient Teams { get; }
+
+        /// <summary>
+        /// Interact with and view information about users and also current user.
+        /// </summary>
+        public UsersClient Users { get; }
+
+    }
+}

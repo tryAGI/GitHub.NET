@@ -1,0 +1,51 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// The level at which the comment is targeted.
+    /// </summary>
+    public enum PullsCreateReviewCommentRequestSubjectType
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        File,
+        /// <summary>
+        ///
+        /// </summary>
+        Line,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class PullsCreateReviewCommentRequestSubjectTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this PullsCreateReviewCommentRequestSubjectType value)
+        {
+            return value switch
+            {
+                PullsCreateReviewCommentRequestSubjectType.File => "file",
+                PullsCreateReviewCommentRequestSubjectType.Line => "line",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static PullsCreateReviewCommentRequestSubjectType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "file" => PullsCreateReviewCommentRequestSubjectType.File,
+                "line" => PullsCreateReviewCommentRequestSubjectType.Line,
+                _ => null,
+            };
+        }
+    }
+}

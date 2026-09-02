@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhookIssuesOpenedChangesOldRepositoryOwnerType
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Bot,
+        /// <summary>
+        ///
+        /// </summary>
+        Organization,
+        /// <summary>
+        ///
+        /// </summary>
+        User,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssuesOpenedChangesOldRepositoryOwnerTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssuesOpenedChangesOldRepositoryOwnerType value)
+        {
+            return value switch
+            {
+                WebhookIssuesOpenedChangesOldRepositoryOwnerType.Bot => "Bot",
+                WebhookIssuesOpenedChangesOldRepositoryOwnerType.Organization => "Organization",
+                WebhookIssuesOpenedChangesOldRepositoryOwnerType.User => "User",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssuesOpenedChangesOldRepositoryOwnerType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookIssuesOpenedChangesOldRepositoryOwnerType.Bot,
+                "Organization" => WebhookIssuesOpenedChangesOldRepositoryOwnerType.Organization,
+                "User" => WebhookIssuesOpenedChangesOldRepositoryOwnerType.User,
+                _ => null,
+            };
+        }
+    }
+}

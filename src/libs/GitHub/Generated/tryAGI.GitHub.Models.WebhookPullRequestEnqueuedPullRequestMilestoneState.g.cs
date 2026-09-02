@@ -1,0 +1,51 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// The state of the milestone.
+    /// </summary>
+    public enum WebhookPullRequestEnqueuedPullRequestMilestoneState
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Closed,
+        /// <summary>
+        ///
+        /// </summary>
+        Open,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestEnqueuedPullRequestMilestoneStateExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestEnqueuedPullRequestMilestoneState value)
+        {
+            return value switch
+            {
+                WebhookPullRequestEnqueuedPullRequestMilestoneState.Closed => "closed",
+                WebhookPullRequestEnqueuedPullRequestMilestoneState.Open => "open",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestEnqueuedPullRequestMilestoneState? ToEnum(string value)
+        {
+            return value switch
+            {
+                "closed" => WebhookPullRequestEnqueuedPullRequestMilestoneState.Closed,
+                "open" => WebhookPullRequestEnqueuedPullRequestMilestoneState.Open,
+                _ => null,
+            };
+        }
+    }
+}

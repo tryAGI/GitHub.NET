@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeamParentPrivacy
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Closed,
+        /// <summary>
+        ///
+        /// </summary>
+        Open,
+        /// <summary>
+        ///
+        /// </summary>
+        Secret,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeamParentPrivacyExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeamParentPrivacy value)
+        {
+            return value switch
+            {
+                WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeamParentPrivacy.Closed => "closed",
+                WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeamParentPrivacy.Open => "open",
+                WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeamParentPrivacy.Secret => "secret",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeamParentPrivacy? ToEnum(string value)
+        {
+            return value switch
+            {
+                "closed" => WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeamParentPrivacy.Closed,
+                "open" => WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeamParentPrivacy.Open,
+                "secret" => WebhookPullRequestReviewRequestedVariant2PullRequestRequestedReviewerTeamParentPrivacy.Secret,
+                _ => null,
+            };
+        }
+    }
+}

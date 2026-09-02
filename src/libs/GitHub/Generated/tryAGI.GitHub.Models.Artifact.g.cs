@@ -1,0 +1,179 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// An artifact
+    /// </summary>
+    public sealed partial class Artifact
+    {
+        /// <summary>
+        /// Example: 5
+        /// </summary>
+        /// <example>5</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Id { get; set; }
+
+        /// <summary>
+        /// Example: MDEwOkNoZWNrU3VpdGU1
+        /// </summary>
+        /// <example>MDEwOkNoZWNrU3VpdGU1</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string NodeId { get; set; }
+
+        /// <summary>
+        /// The name of the artifact.<br/>
+        /// Example: AdventureWorks.Framework
+        /// </summary>
+        /// <example>AdventureWorks.Framework</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
+
+        /// <summary>
+        /// The size in bytes of the artifact.<br/>
+        /// Example: 12345
+        /// </summary>
+        /// <example>12345</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("size_in_bytes")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required long SizeInBytes { get; set; }
+
+        /// <summary>
+        /// Example: https://api.github.com/repos/github/hello-world/actions/artifacts/5
+        /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/actions/artifacts/5</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("url")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Url { get; set; }
+
+        /// <summary>
+        /// Example: https://api.github.com/repos/github/hello-world/actions/artifacts/5/zip
+        /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/actions/artifacts/5/zip</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("archive_download_url")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ArchiveDownloadUrl { get; set; }
+
+        /// <summary>
+        /// Whether or not the artifact has expired.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expired")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool Expired { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        public global::System.DateTime? CreatedAt { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        public global::System.DateTime? ExpiresAt { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
+        public global::System.DateTime? UpdatedAt { get; set; }
+
+        /// <summary>
+        /// The SHA256 digest of the artifact. This field will only be populated on artifacts uploaded with upload-artifact v4 or newer. For older versions, this field will be null.<br/>
+        /// Example: sha256:cfc3236bdad15b5898bca8408945c9e19e1917da8704adc20eaa618444290a8c
+        /// </summary>
+        /// <example>sha256:cfc3236bdad15b5898bca8408945c9e19e1917da8704adc20eaa618444290a8c</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("digest")]
+        public string? Digest { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workflow_run")]
+        public global::tryAGI.GitHub.ArtifactWorkflowRun? WorkflowRun { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Artifact" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Example: 5
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDEwOkNoZWNrU3VpdGU1
+        /// </param>
+        /// <param name="name">
+        /// The name of the artifact.<br/>
+        /// Example: AdventureWorks.Framework
+        /// </param>
+        /// <param name="sizeInBytes">
+        /// The size in bytes of the artifact.<br/>
+        /// Example: 12345
+        /// </param>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/github/hello-world/actions/artifacts/5
+        /// </param>
+        /// <param name="archiveDownloadUrl">
+        /// Example: https://api.github.com/repos/github/hello-world/actions/artifacts/5/zip
+        /// </param>
+        /// <param name="expired">
+        /// Whether or not the artifact has expired.
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="expiresAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="digest">
+        /// The SHA256 digest of the artifact. This field will only be populated on artifacts uploaded with upload-artifact v4 or newer. For older versions, this field will be null.<br/>
+        /// Example: sha256:cfc3236bdad15b5898bca8408945c9e19e1917da8704adc20eaa618444290a8c
+        /// </param>
+        /// <param name="workflowRun"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public Artifact(
+            int id,
+            string nodeId,
+            string name,
+            long sizeInBytes,
+            string url,
+            string archiveDownloadUrl,
+            bool expired,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? expiresAt,
+            global::System.DateTime? updatedAt,
+            string? digest,
+            global::tryAGI.GitHub.ArtifactWorkflowRun? workflowRun)
+        {
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.SizeInBytes = sizeInBytes;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.ArchiveDownloadUrl = archiveDownloadUrl ?? throw new global::System.ArgumentNullException(nameof(archiveDownloadUrl));
+            this.Expired = expired;
+            this.CreatedAt = createdAt;
+            this.ExpiresAt = expiresAt;
+            this.UpdatedAt = updatedAt;
+            this.Digest = digest;
+            this.WorkflowRun = workflowRun;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Artifact" /> class.
+        /// </summary>
+        public Artifact()
+        {
+        }
+
+    }
+}

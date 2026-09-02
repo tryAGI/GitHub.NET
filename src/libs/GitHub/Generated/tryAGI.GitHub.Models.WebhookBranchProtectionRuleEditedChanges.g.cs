@@ -1,0 +1,134 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// If the action was `edited`, the changes to the rule.
+    /// </summary>
+    public sealed partial class WebhookBranchProtectionRuleEditedChanges
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("admin_enforced")]
+        public global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesAdminEnforced? AdminEnforced { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("authorized_actor_names")]
+        public global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames? AuthorizedActorNames { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("authorized_actors_only")]
+        public global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesAuthorizedActorsOnly? AuthorizedActorsOnly { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("authorized_dismissal_actors_only")]
+        public global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly? AuthorizedDismissalActorsOnly { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("linear_history_requirement_enforcement_level")]
+        public global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel? LinearHistoryRequirementEnforcementLevel { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("lock_branch_enforcement_level")]
+        public global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel? LockBranchEnforcementLevel { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("lock_allows_fork_sync")]
+        public global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync? LockAllowsForkSync { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pull_request_reviews_enforcement_level")]
+        public global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel? PullRequestReviewsEnforcementLevel { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("require_last_push_approval")]
+        public global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval? RequireLastPushApproval { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("required_status_checks")]
+        public global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks? RequiredStatusChecks { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("required_status_checks_enforcement_level")]
+        public global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel? RequiredStatusChecksEnforcementLevel { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookBranchProtectionRuleEditedChanges" /> class.
+        /// </summary>
+        /// <param name="adminEnforced"></param>
+        /// <param name="authorizedActorNames"></param>
+        /// <param name="authorizedActorsOnly"></param>
+        /// <param name="authorizedDismissalActorsOnly"></param>
+        /// <param name="linearHistoryRequirementEnforcementLevel"></param>
+        /// <param name="lockBranchEnforcementLevel"></param>
+        /// <param name="lockAllowsForkSync"></param>
+        /// <param name="pullRequestReviewsEnforcementLevel"></param>
+        /// <param name="requireLastPushApproval"></param>
+        /// <param name="requiredStatusChecks"></param>
+        /// <param name="requiredStatusChecksEnforcementLevel"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public WebhookBranchProtectionRuleEditedChanges(
+            global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesAdminEnforced? adminEnforced,
+            global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames? authorizedActorNames,
+            global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesAuthorizedActorsOnly? authorizedActorsOnly,
+            global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly? authorizedDismissalActorsOnly,
+            global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel? linearHistoryRequirementEnforcementLevel,
+            global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel? lockBranchEnforcementLevel,
+            global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync? lockAllowsForkSync,
+            global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel? pullRequestReviewsEnforcementLevel,
+            global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval? requireLastPushApproval,
+            global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks? requiredStatusChecks,
+            global::tryAGI.GitHub.WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel? requiredStatusChecksEnforcementLevel)
+        {
+            this.AdminEnforced = adminEnforced;
+            this.AuthorizedActorNames = authorizedActorNames;
+            this.AuthorizedActorsOnly = authorizedActorsOnly;
+            this.AuthorizedDismissalActorsOnly = authorizedDismissalActorsOnly;
+            this.LinearHistoryRequirementEnforcementLevel = linearHistoryRequirementEnforcementLevel;
+            this.LockBranchEnforcementLevel = lockBranchEnforcementLevel;
+            this.LockAllowsForkSync = lockAllowsForkSync;
+            this.PullRequestReviewsEnforcementLevel = pullRequestReviewsEnforcementLevel;
+            this.RequireLastPushApproval = requireLastPushApproval;
+            this.RequiredStatusChecks = requiredStatusChecks;
+            this.RequiredStatusChecksEnforcementLevel = requiredStatusChecksEnforcementLevel;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookBranchProtectionRuleEditedChanges" /> class.
+        /// </summary>
+        public WebhookBranchProtectionRuleEditedChanges()
+        {
+        }
+
+    }
+}

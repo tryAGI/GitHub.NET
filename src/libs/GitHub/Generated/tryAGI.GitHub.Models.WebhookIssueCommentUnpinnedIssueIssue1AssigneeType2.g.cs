@@ -1,0 +1,63 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhookIssueCommentUnpinnedIssueIssue1AssigneeType2
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Bot,
+        /// <summary>
+        ///
+        /// </summary>
+        Mannequin,
+        /// <summary>
+        ///
+        /// </summary>
+        Organization,
+        /// <summary>
+        ///
+        /// </summary>
+        User,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssueCommentUnpinnedIssueIssue1AssigneeType2Extensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssueCommentUnpinnedIssueIssue1AssigneeType2 value)
+        {
+            return value switch
+            {
+                WebhookIssueCommentUnpinnedIssueIssue1AssigneeType2.Bot => "Bot",
+                WebhookIssueCommentUnpinnedIssueIssue1AssigneeType2.Mannequin => "Mannequin",
+                WebhookIssueCommentUnpinnedIssueIssue1AssigneeType2.Organization => "Organization",
+                WebhookIssueCommentUnpinnedIssueIssue1AssigneeType2.User => "User",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssueCommentUnpinnedIssueIssue1AssigneeType2? ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookIssueCommentUnpinnedIssueIssue1AssigneeType2.Bot,
+                "Mannequin" => WebhookIssueCommentUnpinnedIssueIssue1AssigneeType2.Mannequin,
+                "Organization" => WebhookIssueCommentUnpinnedIssueIssue1AssigneeType2.Organization,
+                "User" => WebhookIssueCommentUnpinnedIssueIssue1AssigneeType2.User,
+                _ => null,
+            };
+        }
+    }
+}

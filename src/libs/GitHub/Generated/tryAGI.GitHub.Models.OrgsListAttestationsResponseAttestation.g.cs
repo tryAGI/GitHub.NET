@@ -1,0 +1,75 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public sealed partial class OrgsListAttestationsResponseAttestation
+    {
+        /// <summary>
+        /// The attestation's Sigstore Bundle.<br/>
+        /// Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("bundle")]
+        public global::tryAGI.GitHub.OrgsListAttestationsResponseAttestationBundle? Bundle { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("repository_id")]
+        public int? RepositoryId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("bundle_url")]
+        public string? BundleUrl { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("initiator")]
+        public string? Initiator { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsListAttestationsResponseAttestation" /> class.
+        /// </summary>
+        /// <param name="bundle">
+        /// The attestation's Sigstore Bundle.<br/>
+        /// Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
+        /// </param>
+        /// <param name="repositoryId"></param>
+        /// <param name="bundleUrl"></param>
+        /// <param name="initiator"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public OrgsListAttestationsResponseAttestation(
+            global::tryAGI.GitHub.OrgsListAttestationsResponseAttestationBundle? bundle,
+            int? repositoryId,
+            string? bundleUrl,
+            string? initiator)
+        {
+            this.Bundle = bundle;
+            this.RepositoryId = repositoryId;
+            this.BundleUrl = bundleUrl;
+            this.Initiator = initiator;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsListAttestationsResponseAttestation" /> class.
+        /// </summary>
+        public OrgsListAttestationsResponseAttestation()
+        {
+        }
+
+    }
+}

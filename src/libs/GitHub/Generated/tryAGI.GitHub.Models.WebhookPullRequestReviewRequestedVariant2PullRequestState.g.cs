@@ -1,0 +1,51 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// State of this Pull Request. Either `open` or `closed`.
+    /// </summary>
+    public enum WebhookPullRequestReviewRequestedVariant2PullRequestState
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Closed,
+        /// <summary>
+        ///
+        /// </summary>
+        Open,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestReviewRequestedVariant2PullRequestStateExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestReviewRequestedVariant2PullRequestState value)
+        {
+            return value switch
+            {
+                WebhookPullRequestReviewRequestedVariant2PullRequestState.Closed => "closed",
+                WebhookPullRequestReviewRequestedVariant2PullRequestState.Open => "open",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestReviewRequestedVariant2PullRequestState? ToEnum(string value)
+        {
+            return value switch
+            {
+                "closed" => WebhookPullRequestReviewRequestedVariant2PullRequestState.Closed,
+                "open" => WebhookPullRequestReviewRequestedVariant2PullRequestState.Open,
+                _ => null,
+            };
+        }
+    }
+}

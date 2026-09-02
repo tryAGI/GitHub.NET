@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppOwnerType
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Bot,
+        /// <summary>
+        ///
+        /// </summary>
+        Organization,
+        /// <summary>
+        ///
+        /// </summary>
+        User,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppOwnerTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppOwnerType value)
+        {
+            return value switch
+            {
+                WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppOwnerType.Bot => "Bot",
+                WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppOwnerType.Organization => "Organization",
+                WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppOwnerType.User => "User",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppOwnerType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "Bot" => WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppOwnerType.Bot,
+                "Organization" => WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppOwnerType.Organization,
+                "User" => WebhookIssueCommentEditedIssueIssue1PerformedViaGithubAppOwnerType.User,
+                _ => null,
+            };
+        }
+    }
+}

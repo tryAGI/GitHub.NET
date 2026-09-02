@@ -1,0 +1,51 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// The open or closed state of the issue.
+    /// </summary>
+    public enum IssuesUpdateRequestState
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Closed,
+        /// <summary>
+        ///
+        /// </summary>
+        Open,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class IssuesUpdateRequestStateExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this IssuesUpdateRequestState value)
+        {
+            return value switch
+            {
+                IssuesUpdateRequestState.Closed => "closed",
+                IssuesUpdateRequestState.Open => "open",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static IssuesUpdateRequestState? ToEnum(string value)
+        {
+            return value switch
+            {
+                "closed" => IssuesUpdateRequestState.Closed,
+                "open" => IssuesUpdateRequestState.Open,
+                _ => null,
+            };
+        }
+    }
+}

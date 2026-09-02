@@ -1,0 +1,78 @@
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    public partial interface IReposClient
+    {
+        /// <summary>
+        /// Rename a branch<br/>
+        /// Renames a branch in a repository.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won't be able to push to the old branch name while the rename process is in progress. For more information, see "[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)".<br/>
+        /// The authenticated user must have push access to the branch. If the branch is the default branch, the authenticated user must also have admin or owner permissions.<br/>
+        /// In order to rename the default branch, fine-grained access tokens also need the `administration:write` repository permission.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="branch"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.BranchWithProtection> ReposRenameBranchAsync(
+            string owner,
+            string repo,
+            string branch,
+
+            global::tryAGI.GitHub.ReposRenameBranchRequest request,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Rename a branch<br/>
+        /// Renames a branch in a repository.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won't be able to push to the old branch name while the rename process is in progress. For more information, see "[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)".<br/>
+        /// The authenticated user must have push access to the branch. If the branch is the default branch, the authenticated user must also have admin or owner permissions.<br/>
+        /// In order to rename the default branch, fine-grained access tokens also need the `administration:write` repository permission.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="branch"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.AutoSDKHttpResponse<global::tryAGI.GitHub.BranchWithProtection>> ReposRenameBranchAsResponseAsync(
+            string owner,
+            string repo,
+            string branch,
+
+            global::tryAGI.GitHub.ReposRenameBranchRequest request,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Rename a branch<br/>
+        /// Renames a branch in a repository.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won't be able to push to the old branch name while the rename process is in progress. For more information, see "[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)".<br/>
+        /// The authenticated user must have push access to the branch. If the branch is the default branch, the authenticated user must also have admin or owner permissions.<br/>
+        /// In order to rename the default branch, fine-grained access tokens also need the `administration:write` repository permission.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="branch"></param>
+        /// <param name="newName">
+        /// The new name of the branch.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.BranchWithProtection> ReposRenameBranchAsync(
+            string owner,
+            string repo,
+            string branch,
+            string newName,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

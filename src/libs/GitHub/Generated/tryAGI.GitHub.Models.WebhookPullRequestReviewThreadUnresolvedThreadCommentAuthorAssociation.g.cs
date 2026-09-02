@@ -1,0 +1,87 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// How the author is associated with the repository.
+    /// </summary>
+    public enum WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Collaborator,
+        /// <summary>
+        ///
+        /// </summary>
+        Contributor,
+        /// <summary>
+        ///
+        /// </summary>
+        FirstTimer,
+        /// <summary>
+        ///
+        /// </summary>
+        FirstTimeContributor,
+        /// <summary>
+        ///
+        /// </summary>
+        Mannequin,
+        /// <summary>
+        ///
+        /// </summary>
+        Member,
+        /// <summary>
+        ///
+        /// </summary>
+        None,
+        /// <summary>
+        ///
+        /// </summary>
+        Owner,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociationExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation value)
+        {
+            return value switch
+            {
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Collaborator => "COLLABORATOR",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Contributor => "CONTRIBUTOR",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.FirstTimer => "FIRST_TIMER",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.FirstTimeContributor => "FIRST_TIME_CONTRIBUTOR",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Mannequin => "MANNEQUIN",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Member => "MEMBER",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.None => "NONE",
+                WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Owner => "OWNER",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation? ToEnum(string value)
+        {
+            return value switch
+            {
+                "COLLABORATOR" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Collaborator,
+                "CONTRIBUTOR" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Contributor,
+                "FIRST_TIMER" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.FirstTimer,
+                "FIRST_TIME_CONTRIBUTOR" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.FirstTimeContributor,
+                "MANNEQUIN" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Mannequin,
+                "MEMBER" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Member,
+                "NONE" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.None,
+                "OWNER" => WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation.Owner,
+                _ => null,
+            };
+        }
+    }
+}

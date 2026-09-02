@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// State of a code scanning alert.
+    /// </summary>
+    public enum WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Dismissed,
+        /// <summary>
+        ///
+        /// </summary>
+        Fixed,
+        /// <summary>
+        ///
+        /// </summary>
+        Open,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookCodeScanningAlertCreatedAlertMostRecentInstanceStateExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState value)
+        {
+            return value switch
+            {
+                WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState.Dismissed => "dismissed",
+                WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState.Fixed => "fixed",
+                WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState.Open => "open",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState? ToEnum(string value)
+        {
+            return value switch
+            {
+                "dismissed" => WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState.Dismissed,
+                "fixed" => WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState.Fixed,
+                "open" => WebhookCodeScanningAlertCreatedAlertMostRecentInstanceState.Open,
+                _ => null,
+            };
+        }
+    }
+}

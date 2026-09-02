@@ -1,0 +1,78 @@
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    public partial interface IGistsClient
+    {
+        /// <summary>
+        /// Update a gist<br/>
+        /// Allows you to update a gist's description and to update, delete, or rename gist files. Files<br/>
+        /// from the previous version of the gist that aren't explicitly changed during an edit<br/>
+        /// are unchanged.<br/>
+        /// At least one of `description` or `files` is required.<br/>
+        /// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."<br/>
+        /// - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.
+        /// </summary>
+        /// <param name="gistId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.GistSimple> GistsUpdateAsync(
+            string gistId,
+
+            global::tryAGI.GitHub.GistsUpdateRequest request,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a gist<br/>
+        /// Allows you to update a gist's description and to update, delete, or rename gist files. Files<br/>
+        /// from the previous version of the gist that aren't explicitly changed during an edit<br/>
+        /// are unchanged.<br/>
+        /// At least one of `description` or `files` is required.<br/>
+        /// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."<br/>
+        /// - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.
+        /// </summary>
+        /// <param name="gistId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.GitHub.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.AutoSDKHttpResponse<global::tryAGI.GitHub.GistSimple>> GistsUpdateAsResponseAsync(
+            string gistId,
+
+            global::tryAGI.GitHub.GistsUpdateRequest request,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a gist<br/>
+        /// Allows you to update a gist's description and to update, delete, or rename gist files. Files<br/>
+        /// from the previous version of the gist that aren't explicitly changed during an edit<br/>
+        /// are unchanged.<br/>
+        /// At least one of `description` or `files` is required.<br/>
+        /// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."<br/>
+        /// - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.
+        /// </summary>
+        /// <param name="gistId"></param>
+        /// <param name="description">
+        /// The description of the gist.<br/>
+        /// Example: Example Ruby script
+        /// </param>
+        /// <param name="files">
+        /// The gist files to be updated, renamed, or deleted. Each `key` must match the current filename<br/>
+        /// (including extension) of the targeted gist file. For example: `hello.py`.<br/>
+        /// To delete a file, set the whole file to null. For example: `hello.py : null`. The file will also be<br/>
+        /// deleted if the specified object does not contain at least one of `content` or `filename`.<br/>
+        /// Example: {"hello.rb":{"content":"blah","filename":"goodbye.rb"}}
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.GitHub.GistSimple> GistsUpdateAsync(
+            string gistId,
+            string? description = default,
+            global::System.Collections.Generic.Dictionary<string, global::tryAGI.GitHub.GistsUpdateRequestFiles2?>? files = default,
+            global::tryAGI.GitHub.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

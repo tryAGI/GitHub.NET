@@ -1,0 +1,75 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the release.
+    /// </summary>
+    public enum ReactionsCreateForReleaseRequestContent
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Plus1,
+        /// <summary>
+        ///
+        /// </summary>
+        Eyes,
+        /// <summary>
+        ///
+        /// </summary>
+        Heart,
+        /// <summary>
+        ///
+        /// </summary>
+        Hooray,
+        /// <summary>
+        ///
+        /// </summary>
+        Laugh,
+        /// <summary>
+        ///
+        /// </summary>
+        Rocket,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ReactionsCreateForReleaseRequestContentExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ReactionsCreateForReleaseRequestContent value)
+        {
+            return value switch
+            {
+                ReactionsCreateForReleaseRequestContent.Plus1 => "+1",
+                ReactionsCreateForReleaseRequestContent.Eyes => "eyes",
+                ReactionsCreateForReleaseRequestContent.Heart => "heart",
+                ReactionsCreateForReleaseRequestContent.Hooray => "hooray",
+                ReactionsCreateForReleaseRequestContent.Laugh => "laugh",
+                ReactionsCreateForReleaseRequestContent.Rocket => "rocket",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ReactionsCreateForReleaseRequestContent? ToEnum(string value)
+        {
+            return value switch
+            {
+                "+1" => ReactionsCreateForReleaseRequestContent.Plus1,
+                "eyes" => ReactionsCreateForReleaseRequestContent.Eyes,
+                "heart" => ReactionsCreateForReleaseRequestContent.Heart,
+                "hooray" => ReactionsCreateForReleaseRequestContent.Hooray,
+                "laugh" => ReactionsCreateForReleaseRequestContent.Laugh,
+                "rocket" => ReactionsCreateForReleaseRequestContent.Rocket,
+                _ => null,
+            };
+        }
+    }
+}

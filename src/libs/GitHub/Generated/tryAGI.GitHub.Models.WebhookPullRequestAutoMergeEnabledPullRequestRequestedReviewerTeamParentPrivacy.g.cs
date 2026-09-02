@@ -1,0 +1,57 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerTeamParentPrivacy
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Closed,
+        /// <summary>
+        ///
+        /// </summary>
+        Open,
+        /// <summary>
+        ///
+        /// </summary>
+        Secret,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerTeamParentPrivacyExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerTeamParentPrivacy value)
+        {
+            return value switch
+            {
+                WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerTeamParentPrivacy.Closed => "closed",
+                WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerTeamParentPrivacy.Open => "open",
+                WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerTeamParentPrivacy.Secret => "secret",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerTeamParentPrivacy? ToEnum(string value)
+        {
+            return value switch
+            {
+                "closed" => WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerTeamParentPrivacy.Closed,
+                "open" => WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerTeamParentPrivacy.Open,
+                "secret" => WebhookPullRequestAutoMergeEnabledPullRequestRequestedReviewerTeamParentPrivacy.Secret,
+                _ => null,
+            };
+        }
+    }
+}

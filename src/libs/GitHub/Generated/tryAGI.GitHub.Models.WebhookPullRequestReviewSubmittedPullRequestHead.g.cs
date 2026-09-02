@@ -1,0 +1,84 @@
+
+#nullable enable
+
+namespace tryAGI.GitHub
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public sealed partial class WebhookPullRequestReviewSubmittedPullRequestHead
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("label")]
+        public string? Label { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ref")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Ref { get; set; }
+
+        /// <summary>
+        /// A git repository
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("repo")]
+        public global::tryAGI.GitHub.WebhookPullRequestReviewSubmittedPullRequestHeadRepo? Repo { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sha")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Sha { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public global::tryAGI.GitHub.WebhookPullRequestReviewSubmittedPullRequestHeadUser? User { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewSubmittedPullRequestHead" /> class.
+        /// </summary>
+        /// <param name="ref"></param>
+        /// <param name="sha"></param>
+        /// <param name="label"></param>
+        /// <param name="repo">
+        /// A git repository
+        /// </param>
+        /// <param name="user"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public WebhookPullRequestReviewSubmittedPullRequestHead(
+            string @ref,
+            string sha,
+            string? label,
+            global::tryAGI.GitHub.WebhookPullRequestReviewSubmittedPullRequestHeadRepo? repo,
+            global::tryAGI.GitHub.WebhookPullRequestReviewSubmittedPullRequestHeadUser? user)
+        {
+            this.Label = label;
+            this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
+            this.Repo = repo;
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+            this.User = user;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewSubmittedPullRequestHead" /> class.
+        /// </summary>
+        public WebhookPullRequestReviewSubmittedPullRequestHead()
+        {
+        }
+
+    }
+}
