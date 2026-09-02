@@ -12,6 +12,8 @@ jobs:
       generate-build-number: false
       conventional-commits-publish-conditions: false
       enable-caching: false
-      additional-test-arguments: '--logger GitHubActions'
+      project-path: src/libs/GitHub/GitHub.csproj
+      run-tests: false
+      additional-command: 'dotnet test src/tests/GitHub.IntegrationTests/GitHub.IntegrationTests.csproj --configuration Release --logger GitHubActions'
     secrets:
       nuget-key: ${{ secrets.NUGET_KEY }}

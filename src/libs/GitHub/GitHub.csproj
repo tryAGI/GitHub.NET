@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
+    <!-- The checked-in GitHub REST surface is intentionally generated and very large.
+         Re-running Roslyn analyzers and emitting a 57 MB XML documentation file during
+         every package build exhausts the standard hosted-runner envelope without adding
+         validation beyond AutoSDK's generator suites. -->
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
 
   <PropertyGroup Label="Nuget">
@@ -11,11 +20,4 @@
     <RepositoryUrl>https://github.com/HavenDV/GitHub.NET</RepositoryUrl>
   </PropertyGroup>
   
-  <ItemGroup>
-    <PackageReference Include="PolySharp" Version="1.16.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-
 </Project>
