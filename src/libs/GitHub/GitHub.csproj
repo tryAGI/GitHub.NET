@@ -17,7 +17,7 @@
     <PackageId>tryAGI.GitHub</PackageId>
     <Description>Generated C# SDK based on the official GitHub REST OpenAPI specification.</Description>
     <PackageTags>api;client;sdk;dotnet;openapi;generated;github;rest;tryagi</PackageTags>
-    <RepositoryUrl>https://github.com/HavenDV/GitHub.NET</RepositoryUrl>
+    <RepositoryUrl>https://github.com/tryAGI/GitHub.NET</RepositoryUrl>
   </PropertyGroup>
   
 </Project>

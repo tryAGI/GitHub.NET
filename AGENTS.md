@@ -9,7 +9,7 @@ This file gives Codex and other agents enough repository context to work safely 
 This section was generated from the GitHub repository inventory and local checkout to support future Codex work and portfolio analysis.
 
 ### Repository Metadata
-- Remote: https://github.com/HavenDV/GitHub.NET
+- Remote: https://github.com/tryAGI/GitHub.NET
 - Visibility: public
 - Type: original; active
 - Primary language: C#

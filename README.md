@@ -2,8 +2,8 @@
 Generated .NET SDK for the GitHub REST API, built from GitHub's official OpenAPI description with [AutoSDK](https://github.com/tryAGI/AutoSDK).
 
 [![Nuget package](https://img.shields.io/nuget/vpre/tryAGI.GitHub)](https://www.nuget.org/packages/tryAGI.GitHub/)
-[![dotnet](https://github.com/HavenDV/GitHub.NET/actions/workflows/dotnet.yml/badge.svg?branch=main)](https://github.com/HavenDV/GitHub.NET/actions/workflows/dotnet.yml)
-[![License: MIT](https://img.shields.io/github/license/HavenDV/GitHub.NET)](https://github.com/HavenDV/GitHub.NET/blob/main/LICENSE.txt)
+[![dotnet](https://github.com/tryAGI/GitHub.NET/actions/workflows/dotnet.yml/badge.svg?branch=main)](https://github.com/tryAGI/GitHub.NET/actions/workflows/dotnet.yml)
+[![License: MIT](https://img.shields.io/github/license/tryAGI/GitHub.NET)](https://github.com/tryAGI/GitHub.NET/blob/main/LICENSE.txt)
 
 ## Features 🔥
 - Fully generated C# SDK based on the [official GitHub REST OpenAPI specification](https://github.com/github/rest-api-description) using [AutoSDK](https://github.com/tryAGI/AutoSDK)
