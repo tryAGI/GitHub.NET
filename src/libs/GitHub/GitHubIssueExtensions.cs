@@ -138,7 +138,7 @@ public static class GitHubIssueExtensions
             page => page.Count >= perPage,
             cancellationToken: cancellationToken).ConfigureAwait(false))
         {
-            if (issue.PullRequest is null)
+            if (!IsPullRequest(issue))
             {
                 issues.Add(issue);
             }
@@ -221,6 +221,10 @@ public static class GitHubIssueExtensions
 
     private static void AddIssuesWithoutPullRequests(List<Issue> destination, IEnumerable<Issue> source)
     {
-        destination.AddRange(source.Where(static issue => issue.PullRequest is null));
+        destination.AddRange(source.Where(static issue => !IsPullRequest(issue)));
     }
+
+    private static bool IsPullRequest(Issue issue) =>
+        issue.PullRequest is not null ||
+        issue.HtmlUrl.Contains("/pull/", StringComparison.OrdinalIgnoreCase);
 }

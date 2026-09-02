@@ -98,6 +98,25 @@ public sealed class IssueExtensionsTests
                     },
                     "created_at": "2026-09-01T00:00:00Z",
                     "updated_at": "2026-09-01T00:00:00Z"
+                  },
+                  {
+                    "id": 44,
+                    "node_id": "PR_44",
+                    "url": "https://api.github.com/repos/HavenDV/Advantage/issues/44",
+                    "repository_url": "https://api.github.com/repos/HavenDV/Advantage",
+                    "labels_url": "https://api.github.com/repos/HavenDV/Advantage/issues/44/labels{/name}",
+                    "comments_url": "https://api.github.com/repos/HavenDV/Advantage/issues/44/comments",
+                    "events_url": "https://api.github.com/repos/HavenDV/Advantage/issues/44/events",
+                    "html_url": "https://github.com/HavenDV/Advantage/pull/44",
+                    "number": 44,
+                    "state": "open",
+                    "title": "Pull request without discriminator",
+                    "body": "{{marker}}",
+                    "labels": [],
+                    "locked": false,
+                    "comments": 0,
+                    "created_at": "2026-09-01T00:00:00Z",
+                    "updated_at": "2026-09-01T00:00:00Z"
                   }
                 ]
                 """);
