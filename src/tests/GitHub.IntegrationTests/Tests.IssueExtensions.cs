@@ -22,6 +22,7 @@ public sealed class IssueExtensionsTests
     {
         using var handler = new DelegateHandler(request =>
         {
+            request.Headers.Authorization!.ToString().Should().Be("Bearer token");
             request.Headers.IfNoneMatch.Single().Tag.Should().Be("\"issues-v1\"");
             request.RequestUri!.PathAndQuery.Should().Be(
                 "/repos/HavenDV/Advantage/issues?state=all&sort=updated&direction=desc&per_page=100&page=1");
@@ -35,7 +36,8 @@ public sealed class IssueExtensionsTests
         var snapshot = await client.ListRepositoryIssuesConditionalAsync(
             "HavenDV",
             "Advantage",
-            "\"issues-v1\"");
+            "\"issues-v1\"",
+            requestOptions: GitHubRequestOptions.CreateAuthenticated("token"));
 
         snapshot.NotModified.Should().BeTrue();
         snapshot.EntityTag.Should().Be("\"issues-v1\"");
@@ -48,6 +50,7 @@ public sealed class IssueExtensionsTests
         const string marker = "<!-- advantage-improvement:475 -->";
         using var handler = new DelegateHandler(request =>
         {
+            request.Headers.Authorization!.ToString().Should().Be("Bearer token");
             request.RequestUri!.PathAndQuery.Should().Be(
                 "/repos/HavenDV/Advantage/issues?state=all&sort=updated&direction=desc&per_page=100&page=1");
             return Json(HttpStatusCode.OK, $$"""
@@ -102,7 +105,11 @@ public sealed class IssueExtensionsTests
         using var httpClient = new HttpClient(handler) { BaseAddress = new Uri("https://api.github.com/") };
         using var client = new IssuesClient(httpClient, disposeHttpClient: false);
 
-        var issues = await client.FindIssuesByMarkerAsync("HavenDV", "Advantage", marker);
+        var issues = await client.FindIssuesByMarkerAsync(
+            "HavenDV",
+            "Advantage",
+            marker,
+            requestOptions: GitHubRequestOptions.CreateAuthenticated("token"));
 
         issues.Select(static issue => issue.Number).Should().Equal(42);
     }

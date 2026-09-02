@@ -1,4 +1,4 @@
-dotnet tool update --global autosdk.cli --version 0.34.2
+dotnet tool update --global autosdk.cli --version 0.34.4
 curl --fail --location --output openapi.yaml https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.yaml
 autosdk generate openapi.yaml \
   --namespace tryAGI.GitHub \

@@ -1,13 +1,9 @@
 namespace tryAGI.GitHub;
 
-/// <summary>
-/// Creates request-scoped GitHub REST options without mutating a shared generated client.
-/// </summary>
+/// <summary>Creates request-scoped GitHub REST options without mutating a shared generated client.</summary>
 public static class GitHubRequestOptions
 {
-    /// <summary>
-    /// Creates GitHub REST headers for a bearer, OAuth, or installation token.
-    /// </summary>
+    /// <summary>Creates GitHub REST headers for a bearer, OAuth, or installation token.</summary>
     public static AutoSDKRequestOptions CreateAuthenticated(
         string accessToken,
         string scheme = "Bearer",
@@ -24,17 +20,13 @@ public static class GitHubRequestOptions
     }
 }
 
-/// <summary>
-/// Result of a complete conditional repository-issue read.
-/// </summary>
+/// <summary>Result of a complete conditional repository-issue read.</summary>
 public sealed record GitHubIssueSnapshot(
     bool NotModified,
     string? EntityTag,
     IReadOnlyList<Issue> Issues);
 
-/// <summary>
-/// GitHub-specific issue workflows built on the generated REST surface.
-/// </summary>
+/// <summary>GitHub-specific issue workflows built on the generated REST surface.</summary>
 public static class GitHubIssueExtensions
 {
     /// <summary>
@@ -48,6 +40,7 @@ public static class GitHubIssueExtensions
         string? entityTag = null,
         int perPage = 100,
         int maxPages = 100,
+        AutoSDKRequestOptions? requestOptions = null,
         CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(client);
@@ -57,7 +50,7 @@ public static class GitHubIssueExtensions
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(maxPages);
 
         var firstPage = await AutoSDKConditionalRequests.SendAsync<IList<Issue>>(
-            (requestOptions, token) => client.IssuesListForRepoAsResponseAsync(
+            (conditionalOptions, token) => client.IssuesListForRepoAsResponseAsync(
                 owner,
                 repository,
                 state: IssuesListForRepoState.All,
@@ -65,10 +58,11 @@ public static class GitHubIssueExtensions
                 direction: IssuesListForRepoDirection.Desc,
                 perPage: perPage,
                 page: 1,
-                requestOptions: requestOptions,
+                requestOptions: conditionalOptions,
                 cancellationToken: token),
             entityTag,
-            cancellationToken: cancellationToken).ConfigureAwait(false);
+            requestOptions,
+            cancellationToken).ConfigureAwait(false);
 
         if (firstPage.NotModified)
         {
@@ -94,6 +88,7 @@ public static class GitHubIssueExtensions
                 direction: IssuesListForRepoDirection.Desc,
                 perPage: perPage,
                 page: page,
+                requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
             AddIssuesWithoutPullRequests(issues, items);
             if (items.Count < perPage)
@@ -107,26 +102,25 @@ public static class GitHubIssueExtensions
     }
 
     /// <summary>
-    /// Finds repository issues whose body contains an exact marker. The scan is bounded and skips
-    /// pull requests exposed by GitHub's shared issues endpoint.
+    /// Reads a bounded, newest-first repository issue window and excludes pull requests returned
+    /// by GitHub's shared issues endpoint.
     /// </summary>
-    public static async Task<IReadOnlyList<Issue>> FindIssuesByMarkerAsync(
+    public static async Task<IReadOnlyList<Issue>> ListRecentRepositoryIssuesAsync(
         this IIssuesClient client,
         string owner,
         string repository,
-        string marker,
         int perPage = 100,
         int maxPages = 5,
+        AutoSDKRequestOptions? requestOptions = null,
         CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(client);
         ArgumentException.ThrowIfNullOrWhiteSpace(owner);
         ArgumentException.ThrowIfNullOrWhiteSpace(repository);
-        ArgumentException.ThrowIfNullOrWhiteSpace(marker);
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(perPage);
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(maxPages);
 
-        var matches = new List<Issue>();
+        var issues = new List<Issue>();
         await foreach (var issue in AutoSDKPager.OffsetAsync<IList<Issue>, Issue>(
             async (page, token) => page > maxPages
                 ? []
@@ -138,25 +132,49 @@ public static class GitHubIssueExtensions
                     direction: IssuesListForRepoDirection.Desc,
                     perPage: perPage,
                     page: page,
+                    requestOptions: requestOptions,
                     cancellationToken: token).ConfigureAwait(false),
             static page => page,
             page => page.Count >= perPage,
             cancellationToken: cancellationToken).ConfigureAwait(false))
         {
-            if (issue.PullRequest is null &&
-                issue.Number > 0 &&
-                issue.Body?.Contains(marker, StringComparison.Ordinal) == true)
+            if (issue.PullRequest is null)
             {
-                matches.Add(issue);
+                issues.Add(issue);
             }
         }
 
-        return matches;
+        return issues;
     }
 
-    /// <summary>
-    /// Finds the first issue comment containing an exact marker using bounded pagination.
-    /// </summary>
+    /// <summary>Finds repository issues whose body contains an exact marker.</summary>
+    public static async Task<IReadOnlyList<Issue>> FindIssuesByMarkerAsync(
+        this IIssuesClient client,
+        string owner,
+        string repository,
+        string marker,
+        int perPage = 100,
+        int maxPages = 5,
+        AutoSDKRequestOptions? requestOptions = null,
+        CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(client);
+        ArgumentException.ThrowIfNullOrWhiteSpace(marker);
+
+        var issues = await client.ListRecentRepositoryIssuesAsync(
+            owner,
+            repository,
+            perPage,
+            maxPages,
+            requestOptions,
+            cancellationToken).ConfigureAwait(false);
+        return issues
+            .Where(issue => issue.Number > 0 &&
+                issue.Body?.Contains(marker, StringComparison.Ordinal) == true)
+            .ToArray();
+    }
+
+    /// <summary>Finds the first issue comment containing an exact marker using bounded pagination.</summary>
     public static async Task<IssueComment?> FindIssueCommentByMarkerAsync(
         this IIssuesClient client,
         string owner,
@@ -165,6 +183,7 @@ public static class GitHubIssueExtensions
         string marker,
         int perPage = 100,
         int maxPages = 10,
+        AutoSDKRequestOptions? requestOptions = null,
         CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(client);
@@ -184,6 +203,7 @@ public static class GitHubIssueExtensions
                     issueNumber,
                     perPage: perPage,
                     page: page,
+                    requestOptions: requestOptions,
                     cancellationToken: token).ConfigureAwait(false),
             static page => page,
             page => page.Count >= perPage,

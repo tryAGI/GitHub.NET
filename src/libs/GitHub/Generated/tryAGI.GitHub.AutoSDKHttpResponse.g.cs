@@ -163,7 +163,7 @@ namespace tryAGI.GitHub
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             send = send ?? throw new global::System.ArgumentNullException(nameof(send));
-            requestOptions ??= new global::tryAGI.GitHub.AutoSDKRequestOptions();
+            requestOptions = CloneRequestOptions(requestOptions);
             if (!string.IsNullOrWhiteSpace(entityTag))
             {
                 requestOptions.Headers["If-None-Match"] = entityTag!;
@@ -185,6 +185,32 @@ namespace tryAGI.GitHub
                     entityTag: GetEntityTag(exception.ResponseHeaders) ?? entityTag,
                     response: null);
             }
+        }
+
+        private static global::tryAGI.GitHub.AutoSDKRequestOptions CloneRequestOptions(
+            global::tryAGI.GitHub.AutoSDKRequestOptions? source)
+        {
+            var clone = new global::tryAGI.GitHub.AutoSDKRequestOptions();
+            if (source == null)
+            {
+                return clone;
+            }
+
+            foreach (var header in source.Headers)
+            {
+                clone.Headers[header.Key] = header.Value;
+            }
+
+            foreach (var parameter in source.QueryParameters)
+            {
+                clone.QueryParameters[parameter.Key] = parameter.Value;
+            }
+
+            clone.Timeout = source.Timeout;
+            clone.Retry = source.Retry;
+            clone.ReadResponseAsString = source.ReadResponseAsString;
+            clone.Authorizations = source.Authorizations;
+            return clone;
         }
 
         /// <summary>Gets the first ETag header value from a generated response header map.</summary>
