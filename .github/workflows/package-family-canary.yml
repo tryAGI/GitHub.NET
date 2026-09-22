@@ -1,0 +1,27 @@
+name: Package family canary
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/package-family-canary.yml
+      - scripts/test-package-family.sh
+      - src/libs/GitHub/openapi.yaml
+      - src/libs/GitHub/GitHubIssueExtensions.cs
+
+jobs:
+  family:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+      - name: Install tested AutoSDK CLI
+        run: dotnet tool install --tool-path "$RUNNER_TEMP/autosdk-tool" autosdk.cli --version 0.35.0-preview.2.27
+      - name: Generate, build, pack and consume package family
+        run: ./scripts/test-package-family.sh
+        env:
+          AUTOSDK_CLI: ${{ runner.temp }}/autosdk-tool/autosdk

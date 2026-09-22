@@ -23,6 +23,16 @@ var api = new GitHubClient(httpClient);
 var issue = await api.Issues.IssuesGetAsync("HavenDV", "Advantage", 475);
 ```
 
+## Modular package canary
+
+The [package family canary](.github/workflows/package-family-canary.yml) generates
+`Core`, tag packages such as `Issues`, and the aggregate `tryAGI.GitHub` package
+from the checked-in OpenAPI specification. It builds and packs the family, then
+restores focused and aggregate consumers from the local package feed. Run the
+same check locally with `scripts/test-package-family.sh` after installing the
+pinned AutoSDK CLI version shown in the workflow. The canary does not publish
+packages.
+
 ## Support
 
 Priority place for bugs: https://github.com/tryAGI/AutoSDK/issues
