@@ -3,7 +3,7 @@ set -euo pipefail
 
 repo_root=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 spec="$repo_root/src/libs/GitHub/openapi.yaml"
-version=0.11.0-canary.1
+version=${GITHUB_FAMILY_VERSION:-0.11.0-canary.1}
 
 if [[ -n ${GITHUB_FAMILY_ROOT:-} ]]; then
   packages_root=$(cd "$GITHUB_FAMILY_ROOT" && pwd)
@@ -70,12 +70,20 @@ EOF
 # The Issues package owns its methods and references Core for shared types.
 cp "$repo_root/src/libs/GitHub/GitHubIssueExtensions.cs" "$issues/GitHubIssueExtensions.cs"
 
-dotnet build "$solution" --configuration Release --maxcpucount:1 \
+dotnet restore "$solution" --disable-parallel --maxcpucount:1 \
+  -p:Version="$version"
+
+dotnet build "$solution" --no-restore --configuration Release --maxcpucount:1 \
   -p:Version="$version" \
   -p:ProduceReferenceAssembly=false \
   -p:UseSharedCompilation=false
 
-feed=$(mktemp -d "${RUNNER_TEMP:-/tmp}/github-package-feed.XXXXXX")
+if [[ -n ${GITHUB_FAMILY_FEED:-} ]]; then
+  feed=$GITHUB_FAMILY_FEED
+  mkdir -p "$feed"
+else
+  feed=$(mktemp -d "${RUNNER_TEMP:-/tmp}/github-package-feed.XXXXXX")
+fi
 dotnet pack "$solution" --no-build --configuration Release --maxcpucount:1 \
   -p:Version="$version" \
   -p:ProduceReferenceAssembly=false \
