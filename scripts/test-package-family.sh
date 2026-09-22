@@ -6,7 +6,8 @@ spec="$repo_root/src/libs/GitHub/openapi.yaml"
 version=0.11.0-canary.1
 
 if [[ -n ${GITHUB_FAMILY_ROOT:-} ]]; then
-  packages_root=$GITHUB_FAMILY_ROOT
+  packages_root=$(cd "$GITHUB_FAMILY_ROOT" && pwd)
+  scratch=$(dirname "$packages_root")
 else
   scratch=$(mktemp -d "${RUNNER_TEMP:-/tmp}/github-package-family.XXXXXX")
   packages_root="$scratch/GeneratedPackages"
@@ -32,25 +33,53 @@ test -f "$solution"
 test -f "$manifest"
 test -d "$issues"
 
+# Generated projects live outside src/libs, so carry the repository's package
+# identity, signing and resource metadata into their common MSBuild parent.
+cp "$repo_root/README.md" "$scratch/README.md"
+cp "$repo_root/assets/nuget_icon.png" "$scratch/nuget_icon.png"
+cp "$repo_root/src/key.snk" "$scratch/key.snk"
+cat > "$scratch/Directory.Build.props" <<'EOF'
+<Project>
+  <PropertyGroup>
+    <LangVersion>preview</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)key.snk</AssemblyOriginatorKeyFile>
+    <Authors>HavenDV</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>nuget_icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/tryAGI/GitHub.NET</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>api;client;sdk;dotnet;openapi;generated;github;rest;tryagi</PackageTags>
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="/" />
+    <None Include="$(MSBuildThisFileDirectory)nuget_icon.png" Pack="true" PackagePath="/" />
+  </ItemGroup>
+</Project>
+EOF
+
 # This hand-written extension is part of the existing aggregate package API.
 # The Issues package owns its methods and references Core for shared types.
 cp "$repo_root/src/libs/GitHub/GitHubIssueExtensions.cs" "$issues/GitHubIssueExtensions.cs"
 
 dotnet build "$solution" --configuration Release --maxcpucount:1 \
   -p:Version="$version" \
-  -p:ImplicitUsings=enable -p:Nullable=enable \
   -p:ProduceReferenceAssembly=false \
-  -p:UseSharedCompilation=false \
-  -p:EnableNETAnalyzers=false -p:RunAnalyzersDuringBuild=false \
-  -p:GenerateDocumentationFile=false
+  -p:UseSharedCompilation=false
 
 feed=$(mktemp -d "${RUNNER_TEMP:-/tmp}/github-package-feed.XXXXXX")
 dotnet pack "$solution" --no-build --configuration Release --maxcpucount:1 \
   -p:Version="$version" \
-  -p:ImplicitUsings=enable -p:Nullable=enable \
   -p:ProduceReferenceAssembly=false \
   -p:EnablePackageValidation=true \
-  -p:PackageLicenseExpression=MIT \
   -o "$feed"
 
 python3 - "$manifest" "$feed" "$version" <<'PY'
