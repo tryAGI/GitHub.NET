@@ -1,4 +1,4 @@
-﻿name: Build and test
+name: Build and test
 on:
   pull_request:
     branches:
@@ -6,10 +6,15 @@ on:
 
 jobs:
   build-test:
-    name: Build abd test
-    uses: HavenDV/workflows/.github/workflows/dotnet_build-test-publish.yml@main
-    with:
-      generate-build-number: false
-      conventional-commits-publish-conditions: false
-      enable-caching: false
-      additional-test-arguments: '--logger GitHubActions'
+    name: Build abd test / Build, test and publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+      - name: Build solution, including trimming helper
+        run: dotnet build GitHub.sln --configuration Release --maxcpucount:1 -p:BuildInParallel=false
+      - name: Run tests
+        run: dotnet test GitHub.sln --configuration Release --no-build --maxcpucount:1 --logger GitHubActions
