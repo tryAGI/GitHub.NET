@@ -17,8 +17,7 @@
   </ItemGroup>
 
   <PropertyGroup Label="Publish">
-    <RuntimeIdentifier Condition="$([MSBuild]::IsOSPlatform('windows'))">win-x64</RuntimeIdentifier>
-    <RuntimeIdentifier Condition="!$([MSBuild]::IsOSPlatform('windows'))">osx-arm64</RuntimeIdentifier>
+    <RuntimeIdentifier>$(NETCoreSdkPortableRuntimeIdentifier)</RuntimeIdentifier>
 
     <SelfContained>true</SelfContained>
   </PropertyGroup>
