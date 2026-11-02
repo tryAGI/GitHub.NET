@@ -43,6 +43,9 @@ jobs:
     name: Build, test and publish package family
     needs: validate-monolith
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -75,9 +78,15 @@ jobs:
           name: tryAGI.GitHub.family
           path: ${{ runner.temp }}/github-package-feed/*.nupkg
 
+      - name: NuGet login (trusted publishing)
+        id: nuget_login
+        uses: NuGet/login@v1
+        with:
+          user: havendv
+
       - name: Publish to NuGet
         env:
-          NUGET_KEY: ${{ secrets.NUGET_KEY }}
+          NUGET_KEY: ${{ steps.nuget_login.outputs.NUGET_API_KEY }}
           PACKAGE_VERSION: ${{ steps.package.outputs.version }}
         run: |
           set -euo pipefail
