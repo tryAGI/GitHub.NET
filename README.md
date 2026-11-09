@@ -12,7 +12,7 @@ Generated .NET SDK for the GitHub REST API, built from GitHub's official OpenAPI
 - Updated and supported automatically if there are no breaking changes
 
 ### Usage
-```csharp
+```csharp-
 using tryAGI.GitHub;
 
 using var httpClient = new HttpClient { BaseAddress = new Uri("https://api.github.com/") };
